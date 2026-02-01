@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahmatullo Ergashev - Flutter Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <div class="bg-gradient"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">RE</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">Fargana, Uzbekistan • Open to Work</span>
+                <h1>Rahmatullo<br><span>Ergashev</span></h1>
+                <p class="hero-subtitle">Flutter Developer with 1+ year of experience building cross-platform mobile apps. Currently participating in a StartUp project at Najot ta'lim, while mastering design patterns and clean architecture.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="Rahmatullo_Ergashev_CV.pdf" download class="btn btn-secondary" style="border-color: var(--accent-green); color: var(--accent-green);">📄 Download CV</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="flutter-logo">
+                    <svg viewBox="0 0 256 317" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                        <defs>
+                            <linearGradient id="flutterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#22d3ee"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M157.666 0.001L0 157.667l48.8 48.8L255.267 0z" fill="url(#flutterGrad)"/>
+                        <path d="M156.567 145.396L72.15 229.815l48.8 48.8 132.216-132.216z" fill="#4f46e5"/>
+                        <path d="M121.133 279.531l48.8-48.8 48.8 48.8-48.8 48.801z" fill="#22d3ee" opacity="0.8"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1+ Year</div>
+                <div class="stat-label">Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Commitment</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Mobile applications built with Flutter, showcasing modern UI/UX design and robust functionality</p>
+            </div>
+            <div class="projects-grid">
+                <!-- StyleUp Project -->
+                <div class="project-card" onclick="openModal('styleup')">
+                    <div class="project-image">
+                        <img id="styleup-thumb" src="images/StyleUp1.png" alt="StyleUp">
+                        <div class="project-overlay">
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">StyleUp (BarBros)</h3>
+                        <p class="project-desc">Search barbershops and order services, view available tables and recognize different services. Team project at Najot ta'lim StartUp program.</p>
+                        <div class="project-tags">
+                            <span class="tag orange">Flutter</span>
+                            <span class="tag">BLoC</span>
+                            <span class="tag green">Clean Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nasiya Project -->
+                <div class="project-card" onclick="openModal('nasiya')">
+                    <div class="project-image">
+                        <img id="nasiya-thumb" src="images/nasiyaapp1.png" alt="Nasiya App">
+                        <div class="project-overlay">
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Nasiya App</h3>
+                        <p class="project-desc">Installment payment management system for small businesses with SMS notifications, client tracking, and detailed financial reports.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag cyan">BLoC</span>
+                            <span class="tag green">Multi-language</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avtomaktab Project -->
+                <div class="project-card" onclick="openModal('avtotest')">
+                    <div class="project-image">
+                        <img id="avtotest-thumb" src="images/avtotest1.png" alt="Avtomaktab">
+                        <div class="project-overlay">
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Avtomaktab</h3>
+                        <p class="project-desc">Driving school test preparation app with 1000+ questions, practice exams, progress tracking, and multi-language support.</p>
+                        <div class="project-tags">
+                            <span class="tag cyan">Flutter</span>
+                            <span class="tag orange">Provider</span>
+                            <span class="tag">1000+ Questions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Education Section -->
+    <section id="education" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Background</span>
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">My learning journey in software development</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="contact-item" style="margin-bottom: 1.5rem;">
+                    <div class="contact-icon" style="background: linear-gradient(135deg, var(--accent-green), #059669);">🎓</div>
+                    <div class="contact-details">
+                        <h3 style="font-size: 1.2rem;">Najot Ta'lim - Flutter Bootcamp</h3>
+                        <p style="color: var(--gray); margin-top: 0.3rem;">Intensive Flutter development program • Graduated 2025</p>
+                    </div>
+                </div>
+                <div class="contact-item" style="margin-bottom: 1.5rem;">
+                    <div class="contact-icon" style="background: linear-gradient(135deg, var(--accent), #0891b2);">📚</div>
+                    <div class="contact-details">
+                        <h3 style="font-size: 1.2rem;">Najot Ta'lim - Foundation Course</h3>
+                        <p style="color: var(--gray); margin-top: 0.3rem;">Programming fundamentals • Graduated 2025</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon" style="background: linear-gradient(135deg, var(--accent-orange), #ea580c);">🚀</div>
+                    <div class="contact-details">
+                        <h3 style="font-size: 1.2rem;">Currently Learning</h3>
+                        <p style="color: var(--gray); margin-top: 0.3rem;">Design Patterns • Flutter Apprentice Book • StartUp Project at Najot Ta'lim</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Expertise</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Specialized in Flutter development with a strong foundation in mobile app architecture</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Flutter & Dart</span>
+                        <span class="skill-level">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">State Management (BLoC, Provider)</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Clean Architecture & MVVM</span>
+                        <span class="skill-level">65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">REST API & Dio</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Firebase Integration</span>
+                        <span class="skill-level">60%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Git & GitHub</span>
+                        <span class="skill-level">65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">Have a project in mind? Let's discuss how I can help bring your ideas to life</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="/cdn-cgi/l/email-protection#1776647b7e73737e792227272157707a767e7b3974787a"><span class="__cf_email__" data-cfemail="b4d5c7d8ddd0d0ddda81848482f4d3d9d5ddd89ad7dbd9">[email&#160;protected]</span></a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+998990375006">+998 99 037 5006</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h3>Telegram</h3>
+                            <a href="https://t.me/lagman5006" target="_blank">@lagman5006</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/rahmatulloh-ergashev/" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🐙</div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/lagman5006" target="_blank">github.com/lagman5006</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Rahmatullo Ergashev. Built with passion for Flutter development.</p>
+    </footer>
+
+    <!-- StyleUp Modal -->
+    <div id="styleup-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">StyleUp (BarBros)</h2>
+                    <p class="modal-subtitle">Barbershop Booking Platform</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('styleup')">×</button>
+            </div>
+            <div class="modal-content">
+                <div>
+                    <div class="gallery-main">
+                        <img id="styleup-main-img" src="" alt="StyleUp Screenshot">
+                        <button class="gallery-nav gallery-prev" onclick="changeImage('styleup', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeImage('styleup', 1)">›</button>
+                        <div class="gallery-counter">
+                            <span id="styleup-counter">1</span> / <span id="styleup-total">5</span>
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails" id="styleup-thumbs"></div>
+                </div>
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h4>📱 About the Project</h4>
+                        <p>StyleUp is a comprehensive barbershop booking platform designed to connect users with nearby barbershops and styling services. The app helps barbershops manage their barbers and enables barbers to showcase their work and attract more clients.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>✨ Key Features</h4>
+                        <ul class="feature-list">
+                            <li>Browse nearby barbershops and services</li>
+                            <li>View barber profiles and portfolios</li>
+                            <li>Book appointments with preferred barbers</li>
+                            <li>Dark/Light theme support</li>
+                            <li>Order history and management</li>
+                            <li>Real-time chat with barbershops</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠 Tech Stack</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Flutter</span>
+                            <span class="tech-item">Dart</span>
+                            <span class="tech-item">BLoC</span>
+                            <span class="tech-item">Clean Architecture</span>
+                            <span class="tech-item">Dependency Injection</span>
+                            <span class="tech-item">REST API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nasiya Modal -->
+    <div id="nasiya-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">Nasiya App</h2>
+                    <p class="modal-subtitle">Installment Payment Management</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('nasiya')">×</button>
+            </div>
+            <div class="modal-content">
+                <div>
+                    <div class="gallery-main">
+                        <img id="nasiya-main-img" src="" alt="Nasiya Screenshot">
+                        <button class="gallery-nav gallery-prev" onclick="changeImage('nasiya', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeImage('nasiya', 1)">›</button>
+                        <div class="gallery-counter">
+                            <span id="nasiya-counter">1</span> / <span id="nasiya-total">6</span>
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails" id="nasiya-thumbs"></div>
+                </div>
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h4>📱 About the Project</h4>
+                        <p>Nasiya App is a powerful installment payment management system designed for small business owners. It helps track customer debts, manage payments, and send automated SMS reminders to clients about upcoming payments.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>✨ Key Features</h4>
+                        <ul class="feature-list">
+                            <li>Dashboard with total debt overview</li>
+                            <li>Client management system</li>
+                            <li>Automated SMS payment reminders</li>
+                            <li>Payment tracking and history</li>
+                            <li>Multi-language support (UZ, RU, EN)</li>
+                            <li>Detailed financial reports</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠 Tech Stack</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Flutter</span>
+                            <span class="tech-item">Dart</span>
+                            <span class="tech-item">BLoC</span>
+                            <span class="tech-item">Clean Architecture</span>
+                            <span class="tech-item">SMS Integration</span>
+                            <span class="tech-item">Local Storage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avtotest Modal -->
+    <div id="avtotest-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">Avtomaktab</h2>
+                    <p class="modal-subtitle">Driving School Test System</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('avtotest')">×</button>
+            </div>
+            <div class="modal-content">
+                <div>
+                    <div class="gallery-main">
+                        <img id="avtotest-main-img" src="" alt="Avtomaktab Screenshot">
+                        <button class="gallery-nav gallery-prev" onclick="changeImage('avtotest', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeImage('avtotest', 1)">›</button>
+                        <div class="gallery-counter">
+                            <span id="avtotest-counter">1</span> / <span id="avtotest-total">5</span>
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails" id="avtotest-thumbs"></div>
+                </div>
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h4>📱 About the Project</h4>
+                        <p>Avtomaktab is a comprehensive driving school test preparation application designed to help users prepare for their driving license exam. It features over 1000 questions organized by categories and topics.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>✨ Key Features</h4>
+                        <ul class="feature-list">
+                            <li>1000+ practice questions</li>
+                            <li>Questions organized by categories</li>
+                            <li>Timed practice exams</li>
+                            <li>Progress tracking and statistics</li>
+                            <li>Multi-language (Uzbek Latin, Cyrillic, Russian)</li>
+                            <li>Offline support with JSON data</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠 Tech Stack</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Flutter</span>
+                            <span class="tech-item">Dart</span>
+                            <span class="tech-item">Provider</span>
+                            <span class="tech-item">JSON Data</span>
+                            <span class="tech-item">SharedPreferences</span>
+                            <span class="tech-item">Responsive UI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+<script>
+        const projectData = {
+    styleup: {
+        images: [
+            'images/StyleUp1.png',
+            'images/StyleUp2.png',
+            'images/StyleUp3.png'
+        ],
+        currentIndex: 0
+    },
+    nasiya: {
+        images: [
+            'images/nasiyaapp1.png',
+            'images/nasiyaapp2.png',
+            'images/nasiyaapp3.png'
+        ],
+        currentIndex: 0
+    },
+    avtotest: {
+        images: [
+            'images/avtotest1.png',
+            'images/avtotest2.png',
+            'images/avtotest3.png'
+        ],
+        currentIndex: 0
+    }
+};
+
+        function openModal(project) {
+            document.getElementById(`${project}-modal`).classList.add('active');
+            document.body.style.overflow = 'hidden';
+            updateGallery(project);
+        }
+
+        function closeModal(project) {
+            document.getElementById(`${project}-modal`).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(project, direction) {
+            const data = projectData[project];
+            data.currentIndex += direction;
+            if (data.currentIndex < 0) data.currentIndex = data.images.length - 1;
+            if (data.currentIndex >= data.images.length) data.currentIndex = 0;
+            updateGallery(project);
+        }
+
+        function goToImage(project, index) {
+            projectData[project].currentIndex = index;
+            updateGallery(project);
+        }
+
+        function updateGallery(project) {
+            const data = projectData[project];
+            document.getElementById(`${project}-main-img`).src = data.images[data.currentIndex];
+            document.getElementById(`${project}-counter`).textContent = data.currentIndex + 1;
+            
+            // Update thumbnails
+            const thumbs = document.querySelectorAll(`#${project}-thumbs .gallery-thumb`);
+            thumbs.forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === data.currentIndex);
+            });
+        }
+
+        function createThumbnails(project) {
+            const data = projectData[project];
+            console.log({data})
+            const container = document.getElementById(`${project}-thumbs`);
+            container.innerHTML = '';
+            
+            data.images.forEach((src, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = `gallery-thumb ${index === 0 ? 'active' : ''}`;
+                thumb.onclick = () => goToImage(project, index);
+                thumb.innerHTML = `<img src="${src}" alt="Screenshot ${index + 1}">`;
+                container.appendChild(thumb);
+            });
+            
+            document.getElementById(`${project}-total`).textContent = data.images.length;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const modals = ['styleup', 'nasiya', 'avtotest'];
+            modals.forEach(project => {
+                const modal = document.getElementById(`${project}-modal`);
+                if (modal.classList.contains('active')) {
+                    if (e.key === 'ArrowLeft') changeImage(project, -1);
+                    if (e.key === 'ArrowRight') changeImage(project, 1);
+                    if (e.key === 'Escape') closeModal(project);
+                }
+            });
+        });
+
+        // Close modal on background click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    const project = this.id.replace('-modal', '');
+                    closeModal(project);
+                }
+            });
+        });
+
+        // Initialize with placeholder - will be replaced with actual images
+        window.addEventListener('DOMContentLoaded', function() {
+                            // Initialize images
+        projectData.styleup.images = [
+            "images/avtotest1.png",
+            "images/avtotest2.png",
+            "images/avtotest3.png",
+           ]
+        
+        projectData.nasiya.images = [
+            "images/nasiyaapp1.png",
+            "images/nasiyaapp2.png",
+            "images/nasiyaapp3.png"
+           ]
+        
+        projectData.avtotest.images = [
+            "images/StyleUp1.png",
+            "images/StyleUp2.png",
+            "images/StyleUp3.png"
+           ]
+        })
+        
+</script>
+</body>
+</html>
