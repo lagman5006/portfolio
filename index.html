@@ -142,6 +142,63 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- myMock Project -->
+                <div class="project-card" onclick="openModal('mymock')">
+                    <div class="project-image">
+                        <img id="mymock-thumb" src="images/myMock/Screenshot_20260530_111151.png" alt="myMock">
+                        <div class="project-overlay">
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">myMock</h3>
+                        <p class="project-desc">Interactive educational platform for students featuring mock tests, video lessons, and structured courses with progress tracking.</p>
+                        <div class="project-tags">
+                            <span class="tag orange">Flutter</span>
+                            <span class="tag">Provider</span>
+                            <span class="tag green">REST API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SAIR Project -->
+                <div class="project-card" onclick="openModal('sair')">
+                    <div class="project-image">
+                        <img id="sair-thumb" src="images/SAIR/Screenshot 2026-05-30 at 11.21.41.png" alt="SAIR">
+                        <div class="project-overlay">
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SAIR</h3>
+                        <p class="project-desc">Immersive travel assistant helping tourists and locals discover nearby points of interest using location-aware camera detection.</p>
+                        <div class="project-tags">
+                            <span class="tag cyan">Flutter</span>
+                            <span class="tag">BLoC</span>
+                            <span class="tag orange">AR / Camera</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zonic Project -->
+                <div class="project-card" onclick="openModal('zonic')">
+                    <div class="project-image">
+                        <img id="zonic-thumb" src="images/zonic/Screenshot_20260530_105708.png" alt="Zonic App">
+                        <div class="project-overlay">
+                            <span class="view-project">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Zonic App</h3>
+                        <p class="project-desc">A premium health and fitness companion designed to track steps, workouts, and sleep with beautiful data visualizations.</p>
+                        <div class="project-tags">
+                            <span class="tag cyan">Flutter</span>
+                            <span class="tag">BLoC</span>
+                            <span class="tag green">Hive (NoSQL)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -481,36 +538,214 @@
             </div>
         </div>
     </div>
+
+    <!-- myMock Modal -->
+    <div id="mymock-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">myMock</h2>
+                    <p class="modal-subtitle">Interactive Educational Platform</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('mymock')">×</button>
+            </div>
+            <div class="modal-content">
+                <div>
+                    <div class="gallery-main">
+                        <img id="mymock-main-img" src="" alt="myMock Screenshot">
+                        <button class="gallery-nav gallery-prev" onclick="changeImage('mymock', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeImage('mymock', 1)">›</button>
+                        <div class="gallery-counter">
+                            <span id="mymock-counter">1</span> / <span id="mymock-total">5</span>
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails" id="mymock-thumbs"></div>
+                </div>
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h4>📱 About the Project</h4>
+                        <p>myMock is an interactive educational platform designed for students. It empowers them to prepare for examinations through comprehensive online mock tests, interactive video lessons, and structured multi-module courses while receiving academic support.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>✨ Key Features</h4>
+                        <ul class="feature-list">
+                            <li>Comprehensive mock tests & results tracking</li>
+                            <li>Interactive video lessons with modular structure</li>
+                            <li>Browse teacher profiles & academic courses</li>
+                            <li>Secure authentication via Phone and Google account</li>
+                            <li>Live chat support with teachers and administrators</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠 Tech Stack</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Flutter</span>
+                            <span class="tech-item">Dart</span>
+                            <span class="tech-item">Provider</span>
+                            <span class="tech-item">REST API & Dio</span>
+                            <span class="tech-item">Firebase Auth</span>
+                            <span class="tech-item">State Management</span>
+                        </div>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🔗 Store Links</h4>
+                        <a href="https://apps.apple.com/us/app/mymock/id6760037918" target="_blank" class="btn-appstore">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.56C4.26,17.1 2.97,12.56 4.72,9.53C5.59,8.03 7.14,7.08 8.82,7.05C10.1,7.03 11.3,7.9 12.08,7.9C12.86,7.9 14.3,6.85 15.84,7C16.5,7.03 18.33,7.27 19.53,9C19.43,9.07 17.2,10.36 17.22,13C17.25,16.08 19.92,17.1 20,17.14C19.97,17.24 19.56,18.64 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C15.85,1.04 14.51,1.73 13.73,2.64C13.07,3.41 12.49,4.52 12.64,5.78C13.87,5.87 15.12,5.17 15.97,4.17Z"/>
+                            </svg>
+                            Download on the App Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SAIR Modal -->
+    <div id="sair-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">SAIR</h2>
+                    <p class="modal-subtitle">Travel & Location Discovery Assistant</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('sair')">×</button>
+            </div>
+            <div class="modal-content">
+                <div>
+                    <div class="gallery-main">
+                        <img id="sair-main-img" src="" alt="SAIR Screenshot">
+                        <button class="gallery-nav gallery-prev" onclick="changeImage('sair', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeImage('sair', 1)">›</button>
+                        <div class="gallery-counter">
+                            <span id="sair-counter">1</span> / <span id="sair-total">5</span>
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails" id="sair-thumbs"></div>
+                </div>
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h4>📱 About the Project</h4>
+                        <p>SAIR is a location-aware travel companion designed to help tourists and locals discover historical landmarks, attractions, restaurants, and shops. It uses advanced mapping and camera technologies to present real-time point-of-interest details.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>✨ Key Features</h4>
+                        <ul class="feature-list">
+                            <li>Augmented Reality (AR) camera scanning for locations</li>
+                            <li>Real-time nearby attraction and cafe directory</li>
+                            <li>Location tracking, live map views, and route calculation</li>
+                            <li>Detailed attraction overview pages with user reviews</li>
+                            <li>Offline map caching & localized point-of-interest database</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠 Tech Stack</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Flutter</span>
+                            <span class="tech-item">Dart</span>
+                            <span class="tech-item">BLoC</span>
+                            <span class="tech-item">AR View / Custom Camera</span>
+                            <span class="tech-item">Google Maps API</span>
+                            <span class="tech-item">Geolocator & Compass</span>
+                        </div>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🔗 Store Links</h4>
+                        <a href="https://apps.apple.com/us/app/sair/id6763813012" target="_blank" class="btn-appstore">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.56C4.26,17.1 2.97,12.56 4.72,9.53C5.59,8.03 7.14,7.08 8.82,7.05C10.1,7.03 11.3,7.9 12.08,7.9C12.86,7.9 14.3,6.85 15.84,7C16.5,7.03 18.33,7.27 19.53,9C19.43,9.07 17.2,10.36 17.22,13C17.25,16.08 19.92,17.1 20,17.14C19.97,17.24 19.56,18.64 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C15.85,1.04 14.51,1.73 13.73,2.64C13.07,3.41 12.49,4.52 12.64,5.78C13.87,5.87 15.12,5.17 15.97,4.17Z"/>
+                            </svg>
+                            Download on the App Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zonic Modal -->
+    <div id="zonic-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">Zonic App</h2>
+                    <p class="modal-subtitle">Health & Fitness Companion</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('zonic')">×</button>
+            </div>
+            <div class="modal-content">
+                <div>
+                    <div class="gallery-main">
+                        <img id="zonic-main-img" src="" alt="Zonic Screenshot">
+                        <button class="gallery-nav gallery-prev" onclick="changeImage('zonic', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeImage('zonic', 1)">›</button>
+                        <div class="gallery-counter">
+                            <span id="zonic-counter">1</span> / <span id="zonic-total">4</span>
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails" id="zonic-thumbs"></div>
+                </div>
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h4>📱 About the Project</h4>
+                        <p>Zonic is an elegant health and fitness tracker that empowers users to monitor their physical activity, workouts, sleep, and overall wellness. The application utilizes local caching to guarantee flawless offline operation and renders beautiful data visualization graphs.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>✨ Key Features</h4>
+                        <ul class="feature-list">
+                            <li>Daily physical activity, step counts, & workout log</li>
+                            <li>Personal health goal setting & interactive progress indicators</li>
+                            <li>Premium dark mode dashboard with customized UI designs</li>
+                            <li>Sleek charts & graphical statistics of weekly/monthly progress</li>
+                            <li>NoSQL local caching for complete offline functionality</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>🛠 Tech Stack</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Flutter</span>
+                            <span class="tech-item">Dart</span>
+                            <span class="tech-item">BLoC</span>
+                            <span class="tech-item">Hive (NoSQL Database)</span>
+                            <span class="tech-item">Custom Painters & Graphs</span>
+                            <span class="tech-item">Sensors / Health Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
 <script>
         const projectData = {
     styleup: {
-        images: [
-            'images/StyleUp1.png',
-            'images/StyleUp2.png',
-            'images/StyleUp3.png'
-        ],
+        images: [],
         currentIndex: 0
     },
     nasiya: {
-        images: [
-            'images/nasiyaapp1.png',
-            'images/nasiyaapp2.png',
-            'images/nasiyaapp3.png'
-        ],
+        images: [],
         currentIndex: 0
     },
     avtotest: {
-        images: [
-            'images/avtotest1.png',
-            'images/avtotest2.png',
-            'images/avtotest3.png'
-        ],
+        images: [],
+        currentIndex: 0
+    },
+    mymock: {
+        images: [],
+        currentIndex: 0
+    },
+    sair: {
+        images: [],
+        currentIndex: 0
+    },
+    zonic: {
+        images: [],
         currentIndex: 0
     }
 };
 
         function openModal(project) {
+            createThumbnails(project);
             document.getElementById(`${project}-modal`).classList.add('active');
             document.body.style.overflow = 'hidden';
             updateGallery(project);
@@ -548,7 +783,6 @@
 
         function createThumbnails(project) {
             const data = projectData[project];
-            console.log({data})
             const container = document.getElementById(`${project}-thumbs`);
             container.innerHTML = '';
             
@@ -565,7 +799,7 @@
 
         // Keyboard navigation
         document.addEventListener('keydown', function(e) {
-            const modals = ['styleup', 'nasiya', 'avtotest'];
+            const modals = ['styleup', 'nasiya', 'avtotest', 'mymock', 'sair', 'zonic'];
             modals.forEach(project => {
                 const modal = document.getElementById(`${project}-modal`);
                 if (modal.classList.contains('active')) {
@@ -586,30 +820,49 @@
             });
         });
 
-        // Initialize with placeholder - will be replaced with actual images
+        // Initialize with actual images
         window.addEventListener('DOMContentLoaded', function() {
-                            // Initialize images
-        projectData.styleup.images = [
-            "images/StyleUp1.png",
-            "images/StyleUp2.png",
-            "images/StyleUp3.png",
-           ]
-        
-        projectData.nasiya.images = [
-            "images/nasiyaapp1.png",
-            "images/nasiyaapp2.png",
-            "images/nasiyaapp3.png"
-           ]
-        
-        projectData.avtotest.images = [
-<<<<<<< HEAD
-            "images/avtotest1.png",
-=======
-             "images/avtotest1.png",
->>>>>>> b215066d8e5e9e8b1f549029a5f29c527663a2fa
-            "images/avtotest2.png",
-            "images/avtotest3.png",
-           ]
+            // Initialize images
+            projectData.styleup.images = [
+                "images/StyleUp1.png",
+                "images/StyleUp2.png",
+                "images/StyleUp3.png"
+            ];
+            
+            projectData.nasiya.images = [
+                "images/nasiyaapp1.png",
+                "images/nasiyaapp2.png",
+                "images/nasiyaapp3.png"
+            ];
+            
+            projectData.avtotest.images = [
+                "images/avtotest1.png",
+                "images/avtotest2.png",
+                "images/avtotest3.png"
+            ];
+
+            projectData.mymock.images = [
+                "images/myMock/Screenshot_20260530_111151.png",
+                "images/myMock/Screenshot_20260530_111159.png",
+                "images/myMock/Screenshot_20260530_111239.png",
+                "images/myMock/Screenshot_20260530_111304.png",
+                "images/myMock/Screenshot_20260530_111312.png"
+            ];
+
+            projectData.sair.images = [
+                "images/SAIR/Screenshot 2026-05-30 at 11.21.41.png",
+                "images/SAIR/Screenshot 2026-05-30 at 11.21.49.png",
+                "images/SAIR/Screenshot 2026-05-30 at 11.21.59.png",
+                "images/SAIR/Screenshot 2026-05-30 at 11.22.14.png",
+                "images/SAIR/Screenshot 2026-05-30 at 11.22.21.png"
+            ];
+
+            projectData.zonic.images = [
+                "images/zonic/Screenshot_20260530_105708.png",
+                "images/zonic/Screenshot_20260530_105721.png",
+                "images/zonic/Screenshot_20260530_105815.png",
+                "images/zonic/Screenshot_20260530_105823.png"
+            ];
         })
         
 </script>
