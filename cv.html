@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahmatullo Ergashev - CV / Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent: #22d3ee;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --card: rgba(15, 23, 42, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        .actions-bar {
+            max-width: 900px;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-back {
+            color: var(--gray);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .btn-back:hover {
+            color: var(--light);
+        }
+
+        .btn-print {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 8px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Header block */
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-title h1 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            margin-bottom: 0.3rem;
+            background: linear-gradient(135deg, var(--light), var(--gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-title h2 {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-title p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .contact-grid a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-grid a:hover {
+            color: var(--accent);
+        }
+
+        /* Main layout */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--light);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        /* Summary */
+        .summary-text {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-header h3 {
+            font-size: 1.1rem;
+            color: var(--light);
+        }
+
+        .timeline-header h3 span {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .timeline-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            list-style: none;
+        }
+
+        .timeline-desc li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-desc li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Sidebar lists */
+        .sidebar-section {
+            margin-bottom: 2.2rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .edu-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .edu-item h3 {
+            font-size: 0.95rem;
+            color: var(--light);
+        }
+
+        .edu-item p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .edu-date {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0.4rem;
+        }
+
+        .language-item span:first-child {
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        /* Print Media Styles: Optimize layout for exactly 1 page print */
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #0f172a;
+                padding: 0;
+                font-size: 8.5pt;
+            }
+
+            .actions-bar {
+                display: none;
+            }
+
+            .cv-container {
+                border: none;
+                padding: 0;
+                background: transparent;
+                box-shadow: none;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            header {
+                border-bottom: 2px solid #e2e8f0;
+                padding-bottom: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .header-title h1 {
+                color: #0f172a;
+                -webkit-text-fill-color: #0f172a;
+                background: none;
+                font-size: 20pt;
+            }
+
+            .header-title h2 {
+                color: #4f46e5;
+                font-size: 11pt;
+            }
+
+            .header-title p, .contact-grid, .contact-grid a {
+                color: #475569;
+                font-size: 8pt;
+            }
+
+            .contact-grid a:hover {
+                color: #4f46e5;
+            }
+
+            .cv-grid {
+                grid-template-columns: 1.7fr 1fr;
+                gap: 1.8rem;
+            }
+
+            .section-title {
+                color: #0f172a;
+                border-bottom: 1.5px solid #e2e8f0;
+                padding-bottom: 0.3rem;
+                margin-bottom: 0.8rem;
+                font-size: 10pt;
+            }
+
+            .section-title span {
+                color: #4f46e5;
+            }
+
+            .summary-text {
+                color: #334155;
+                font-size: 8.5pt;
+                line-height: 1.5;
+                margin-bottom: 1.2rem;
+            }
+
+            .timeline {
+                gap: 1.2rem;
+            }
+
+            .timeline-header h3 {
+                font-size: 9.5pt;
+                color: #0f172a;
+            }
+
+            .timeline-header h3 span {
+                font-size: 8pt;
+                color: #0ea5e9;
+            }
+
+            .timeline-date {
+                font-size: 7.5pt;
+                color: #4f46e5;
+                background: #f0fdf4;
+                border: 1px solid #dcfce7;
+                padding: 0.1rem 0.4rem;
+            }
+
+            .timeline-desc {
+                color: #334155;
+                font-size: 8pt;
+            }
+
+            .timeline-desc li::before {
+                color: #4f46e5;
+            }
+
+            .sidebar-section {
+                margin-bottom: 1.2rem;
+            }
+
+            .skill-tag {
+                background: #f1f5f9;
+                border: 1px solid #e2e8f0;
+                color: #1e293b;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                font-size: 7.5pt;
+            }
+
+            .edu-item {
+                margin-bottom: 0.8rem;
+            }
+
+            .edu-item h3 {
+                font-size: 8.5pt;
+                color: #0f172a;
+            }
+
+            .edu-item p {
+                font-size: 7.5pt;
+                color: #475569;
+            }
+
+            .edu-date {
+                color: #0ea5e9;
+            }
+
+            .language-item {
+                font-size: 8pt;
+                color: #475569;
+            }
+
+            .language-item span:first-child {
+                color: #0f172a;
+            }
+        }
+
+        /* Responsive styling for normal web view */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-grid {
+                text-align: left;
+            }
+
+            .cv-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="actions-bar">
+        <a href="index.html" class="btn-back">← Back to Portfolio</a>
+        <button class="btn-print" onclick="window.print()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Save PDF / Print CV
+        </button>
+    </div>
+
+    <div class="cv-container">
+        <header>
+            <div class="header-title">
+                <h1>Rahmatullo Ergashev</h1>
+                <h2>Professional Flutter Developer</h2>
+                <p>Fergana, Uzbekistan • Open to Work / Remote</p>
+            </div>
+            <div class="contact-grid">
+                <a href="tel:+998990375006">📞 +998 99 037 5006</a>
+                <a href="mailto:asliddin5006@gmail.com">✉ asliddin5006@gmail.com</a>
+                <a href="https://github.com/lagman5006" target="_blank">🐙 github.com/lagman5006</a>
+                <a href="https://linkedin.com/in/rahmatulloh-ergashev" target="_blank">💼 linkedin.com/in/rahmatulloh-ergashev</a>
+            </div>
+        </header>
+
+        <div class="cv-grid">
+            <!-- Left Column: Summary & Projects -->
+            <main>
+                <section>
+                    <h2 class="section-title"><span>■</span> Profile Summary</h2>
+                    <p class="summary-text">
+                        Dynamic and results-driven Flutter Developer with over one year of experience crafting premium, high-performance, cross-platform mobile applications. Well-versed in implementing Clean Architecture, SOLID principles, MVVM, and state management frameworks (BLoC, Provider). Adept at building location-aware discovery services, interactive educational portals, and reservation platforms with active releases on the Apple App Store.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="section-title"><span>■</span> Core Projects</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3>myMock <span>(App Store)</span></h3>
+                                <span class="timeline-date">Featured</span>
+                            </div>
+                            <ul class="timeline-desc">
+                                <li>Designed and developed an IELTS mock testing and course application.</li>
+                                <li>Integrated secure authentication, mock exam modules, and progress analytics.</li>
+                                <li>Built student-teacher support chat and REST API clients with Dio & Provider.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3>SAIR <span>(App Store)</span></h3>
+                                <span class="timeline-date">Featured</span>
+                            </div>
+                            <ul class="timeline-desc">
+                                <li>Created a location-aware travel companion app assisting tourists in place discovery.</li>
+                                <li>Implemented an Augmented Reality (AR) point-of-interest camera scanner.</li>
+                                <li>Configured live geolocation tracking, Google Maps API routing, and BLoC.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3>StyleUp <span>(BarBros)</span></h3>
+                                <span class="timeline-date">Team Project</span>
+                            </div>
+                            <ul class="timeline-desc">
+                                <li>Developed a comprehensive barbershop reservation and client-barber ecosystem.</li>
+                                <li>Designed responsive, premium user interfaces with custom animations.</li>
+                                <li>Applied BLoC state management and Clean Architecture design patterns.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3>Zonic App</h3>
+                                <span class="timeline-date">Finished</span>
+                            </div>
+                            <ul class="timeline-desc">
+                                <li>Built a wellness assistant logging daily steps, workouts, and wellness stats.</li>
+                                <li>Engineered local caching using Hive NoSQL DB for complete offline performance.</li>
+                                <li>Crafted premium dark mode interfaces with custom statistical progress graphs.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3>AvtoTest</h3>
+                                <span class="timeline-date">Finished</span>
+                            </div>
+                            <ul class="timeline-desc">
+                                <li>Built an offline driving school exam prep app with over 1000 questions.</li>
+                                <li>Programmed local practice exams, statistics, progress logs, and multi-language support.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Right Column: Skills, Education, Languages -->
+            <aside>
+                <div class="sidebar-section">
+                    <h2 class="section-title"><span>■</span> Technical Skills</h2>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Flutter SDK</span>
+                        <span class="skill-tag">Dart Language</span>
+                        <span class="skill-tag">Clean Architecture</span>
+                        <span class="skill-tag">BLoC / Provider</span>
+                        <span class="skill-tag">MVVM Pattern</span>
+                        <span class="skill-tag">OOP & SOLID</span>
+                        <span class="skill-tag">REST API (Dio)</span>
+                        <span class="skill-tag">Firebase Core</span>
+                        <span class="skill-tag">Hive / NoSQL DB</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Responsive UI/UX</span>
+                        <span class="skill-tag">Agile / Scrum</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="section-title"><span>■</span> Education</h2>
+                    <div class="edu-item">
+                        <h3>Najot Ta'lim</h3>
+                        <p>Flutter Bootcamp Graduate</p>
+                        <p class="edu-date">2024 - 2025</p>
+                    </div>
+                    <div class="edu-item">
+                        <h3>Najot Ta'lim</h3>
+                        <p>Programming Foundation Course</p>
+                        <p class="edu-date">2024 - 2025</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="section-title"><span>■</span> Languages</h2>
+                    <div class="language-item">
+                        <span>Uzbek</span>
+                        <span>Native</span>
+                    </div>
+                    <div class="language-item">
+                        <span>English</span>
+                        <span>Professional</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Russian</span>
+                        <span>Professional</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
