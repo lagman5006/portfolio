@@ -885,7 +885,7 @@
             font-weight: 500;
         }
 
-        .btn-appstore {
+        .btn-appstore, .btn-playstore {
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
@@ -903,7 +903,7 @@
             cursor: pointer;
         }
 
-        .btn-appstore:hover {
+        .btn-appstore:hover, .btn-playstore:hover {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             border-color: var(--primary);
             color: white;
@@ -911,12 +911,24 @@
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
         }
 
-        .btn-appstore svg {
+        .btn-appstore svg, .btn-playstore svg {
             transition: transform 0.3s ease;
         }
 
-        .btn-appstore:hover svg {
+        .btn-appstore:hover svg, .btn-playstore:hover svg {
             transform: scale(1.1);
+        }
+
+        .store-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .store-buttons .btn-appstore,
+        .store-buttons .btn-playstore {
+            margin-top: 0;
         }
 
         /* Responsive */
