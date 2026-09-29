@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Deploy: Render auto-deploys the site after this check passes
+# (Render → Settings → Auto-Deploy: "After CI Checks Pass").
+jobs:
+  lint:
+    name: Lint HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: HTMLHint
+        run: npx -y htmlhint@1 --rules "tag-pair,attr-no-duplication,id-unique,spec-char-escape,doctype-first,title-require" "*.html"
