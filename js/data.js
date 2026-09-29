@@ -7,7 +7,8 @@
  *  frame:  "phone"  — telefon skrinshotlari (vertikal)
  *          "screen" — sayt / desktop skrinshotlari (gorizontal)
  *          "code"   — rasmsiz backend: kartada endpointlar ko'rinadi
- *  links:  appStore, playStore, live, github, docs — faqat borlarini yozing
+ *  links:  appStore, playStore, live, shop, github, docs — faqat borlarini yozing
+ *  logo:   ixtiyoriy — skrinshot bo'lmasa kartada logo ko'rinadi
  *
  *  Rasmlar: images/ ga tashlang, so'ng `./scripts/optimize-images.sh`
  *  ishga tushiring — images/opt/ ichida .webp versiyalari paydo bo'ladi.
@@ -112,15 +113,19 @@ window.PORTFOLIO = {
       ],
       stack: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Leaflet", "Node.js", "REST API", "Nginx"],
       endpoints: ["GET /api/stats", "POST /api/applications", "GET /api/shop/products", "POST /api/shop/orders"],
+      logo: "images/opt/tdyu/logo.webp",
       images: [],
-      links: {},
+      links: {
+        live: "https://fond.yuretta.uz/",
+        shop: "https://fond.yuretta.uz/shop",
+      },
     },
     {
       id: "azko-zavod",
       title: "AZKO Zavod",
       tagline: "Production & accounting system for an oil factory",
       type: "fullstack",
-      frame: "code",
+      frame: "phone",
       year: 2026,
       summary:
         "Backend, web admin panel and mobile app that run an oil factory end-to-end — from raw cottonseed to sales, debts and SMS reminders.",
@@ -137,7 +142,11 @@ window.PORTFOLIO = {
       ],
       stack: ["Node.js", "Express", "TypeScript", "Knex", "MySQL", "React", "Tailwind CSS", "Flutter", "JWT"],
       endpoints: ["POST /api/raw-materials", "POST /api/production/process", "POST /api/sales", "POST /api/debts/:id/send-reminder"],
-      images: [],
+      images: [
+        "images/opt/azkozavod/azko-1.webp",
+        "images/opt/azkozavod/azko-2.webp",
+        "images/opt/azkozavod/azko-3.webp",
+      ],
       links: {},
     },
     {
@@ -145,7 +154,7 @@ window.PORTFOLIO = {
       title: "Xayrulla Hamidov TV",
       tagline: "Football media platform — mobile app, admin panel & API",
       type: "fullstack",
-      frame: "code",
+      frame: "phone",
       year: 2026,
       summary:
         "Football highlights, full matches, podcasts, shorts and live streams for a well-known sports commentator's audience — with push notifications and real-time analytics.",
@@ -162,7 +171,11 @@ window.PORTFOLIO = {
       ],
       stack: ["Flutter", "Dart", "Provider", "Node.js", "Express", "TypeScript", "MySQL", "React", "WebSocket", "Firebase Messaging", "S3 / R2"],
       endpoints: ["GET /api/home", "GET /api/videos/highlights", "POST /api/notifications", "GET /api/analytics"],
-      images: [],
+      images: [
+        "images/opt/xayrulla-tv/tv-1.webp",
+        "images/opt/xayrulla-tv/tv-2.webp",
+        "images/opt/xayrulla-tv/tv-3.webp",
+      ],
       links: {},
     },
     {
@@ -298,7 +311,13 @@ window.PORTFOLIO = {
         "Push notifications and 4 languages (UZ, RU, EN, KG)",
       ],
       stack: ["Flutter", "Dart", "BLoC", "Clean Architecture", "ML Kit", "Yandex MapKit", "Geolocator", "Firebase Messaging", "Dio", "GetIt"],
-      images: [],
+      images: [
+        "images/opt/skor-xodimlar/xodimlar-1.webp",
+        "images/opt/skor-xodimlar/xodimlar-2.webp",
+        "images/opt/skor-xodimlar/xodimlar-3.webp",
+        "images/opt/skor-xodimlar/xodimlar-4.webp",
+        "images/opt/skor-xodimlar/xodimlar-5.webp",
+      ],
       links: {
         appStore: "https://apps.apple.com/uz/app/skor-xodimlar/id6797519944",
         playStore: "https://play.google.com/store/apps/details?id=uz.skor.hodimlar",
@@ -324,7 +343,12 @@ window.PORTFOLIO = {
         "Yearly subscription via Click payments, Excel export",
       ],
       stack: ["Flutter", "Dart", "Riverpod", "Provider", "ML Kit", "Camera", "Firebase Messaging", "Click API", "REST API"],
-      images: [],
+      images: [
+        "images/opt/skor-maktab/maktab-1.webp",
+        "images/opt/skor-maktab/maktab-2.webp",
+        "images/opt/skor-maktab/maktab-3.webp",
+        "images/opt/skor-maktab/maktab-4.webp",
+      ],
       links: {
         appStore: "https://apps.apple.com/uz/app/skor-maktab/id6800694358",
         playStore: "https://play.google.com/store/apps/details?id=uz.skorfaceid.app",
@@ -350,7 +374,14 @@ window.PORTFOLIO = {
         "Sign in with phone OTP, Google or Apple · push notifications",
       ],
       stack: ["Flutter", "Dart", "Provider", "REST API", "Firebase Messaging", "Google Sign-In", "Sign in with Apple", "Table Calendar"],
-      images: [],
+      images: [
+        "images/opt/toyxona/toyxona-1.webp",
+        "images/opt/toyxona/toyxona-2.webp",
+        "images/opt/toyxona/toyxona-3.webp",
+        "images/opt/toyxona/toyxona-4.webp",
+        "images/opt/toyxona/toyxona-5.webp",
+        "images/opt/toyxona/toyxona-6.webp",
+      ],
       links: {
         appStore: "https://apps.apple.com/uz/app/toyxonauz/id6796257426",
         playStore: "https://play.google.com/store/apps/details?id=uz.toyxona.app",
@@ -376,7 +407,12 @@ window.PORTFOLIO = {
         "Offline mode on SQLite with automatic token refresh",
       ],
       stack: ["Flutter", "Dart", "Riverpod", "GoRouter", "SQLite", "Mobile Scanner", "REST API", "Firebase Messaging"],
-      images: [],
+      images: [
+        "images/opt/osiyo-bozor/osiyo-1.webp",
+        "images/opt/osiyo-bozor/osiyo-2.webp",
+        "images/opt/osiyo-bozor/osiyo-3.webp",
+        "images/opt/osiyo-bozor/osiyo-4.webp",
+      ],
       links: {},
     },
   ],

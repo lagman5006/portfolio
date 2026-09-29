@@ -465,6 +465,14 @@ kbd {
   box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.9);
 }
 .media-soon .mono { font-size: 0.74rem; }
+.media-logo {
+  width: 150px; height: 150px; padding: 14px; border-radius: 50%; object-fit: contain;
+  background: #fff; box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.9);
+  transition: transform 0.7s var(--ease);
+}
+.card:hover .media-logo { transform: translateY(-6px) scale(1.03); }
+.card--wide .media-logo { width: 190px; height: 190px; }
+.pd-logo { width: 28px; height: 28px; padding: 2px; border-radius: 50%; object-fit: contain; background: #fff; }
 
 /* Media: browser */
 .media-browser {
@@ -631,6 +639,8 @@ dialog { color: var(--text); }
   border-right: 1px solid var(--border);
 }
 .pd-media[hidden] { display: none; }
+.pd:has(> .pd-media[hidden]) { grid-template-columns: 1fr; }
+.project-dialog:has(.pd-media[hidden]) { width: min(760px, calc(100% - 24px)); }
 .pd-track {
   display: flex; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory;
   scrollbar-width: none; overscroll-behavior-x: contain;

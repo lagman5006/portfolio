@@ -10,6 +10,7 @@
   const TYPE_LABELS = { fullstack: "Full-stack", mobile: "Mobile", desktop: "Desktop", web: "Web", backend: "Backend" };
   const LINK_META = {
     live: { label: "Live site", icon: "↗" },
+    shop: { label: "Online shop", icon: "↗" },
     appStore: { label: "App Store", icon: "" },
     playStore: { label: "Google Play", icon: "▶" },
     github: { label: "Source code", icon: "</>" },
@@ -85,6 +86,11 @@
   const grid = $("[data-projects]");
 
   function cardMedia(p) {
+    // Skrinshot yo'q, lekin logo bor — logo va sayt manzili ko'rinadi
+    if (p.logo && !p.images.length) {
+      const host = p.links.live ? new URL(p.links.live).host : "";
+      return `<div class="media-soon"><img class="media-logo" src="${esc(p.logo)}" alt="${esc(p.title)} logo" loading="lazy" decoding="async">${host ? `<span class="mono muted">${esc(host)}</span>` : ""}</div>`;
+    }
     if (p.frame !== "code" && !p.images.length) {
       return `<div class="media-soon"><span class="media-soon-mark">${esc(p.title.charAt(0))}</span><span class="mono muted">Screenshots coming soon</span></div>`;
     }
@@ -343,7 +349,7 @@
     const p = allProjects.find((x) => x.id === id);
     if (!p) return;
     current = p;
-    $("[data-pd-meta]").innerHTML = `<span class="badge">${TYPE_LABELS[p.type] || p.type}</span>${isCompany(p) ? `<span class="badge badge-company">${esc(data.company.name)}</span>` : ""}<span class="mono muted">${p.year}</span>`;
+    $("[data-pd-meta]").innerHTML = `${p.logo ? `<img class="pd-logo" src="${esc(p.logo)}" alt="" width="28" height="28">` : ""}<span class="badge">${TYPE_LABELS[p.type] || p.type}</span>${isCompany(p) ? `<span class="badge badge-company">${esc(data.company.name)}</span>` : ""}<span class="mono muted">${p.year}</span>`;
     $("[data-pd-title]").textContent = p.title;
     $("[data-pd-tagline]").textContent = p.tagline;
     $("[data-pd-desc]").textContent = p.description;
