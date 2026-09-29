@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -11,44 +11,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
+# Deploy: Render auto-deploys the site after this check passes
+# (Render → Settings → Auto-Deploy: "After CI Checks Pass").
 jobs:
-  ci:
+  lint:
     name: Lint HTML
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
       - name: HTMLHint
         run: npx -y htmlhint@1 --rules "tag-pair,attr-no-duplication,id-unique,spec-char-escape,doctype-first,title-require" "*.html"
-
-  deploy:
-    name: Deploy to Vercel
-    needs: ci
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-latest
-    environment: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && 'Production' || 'Preview' }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm i -g vercel@latest
-      - name: Set target
-        run: |
-          if [ "${{ github.event_name }}" != "pull_request" ] && [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            echo "ENV=production" >> $GITHUB_ENV; echo "PROD=--prod" >> $GITHUB_ENV
-          else
-            echo "ENV=preview" >> $GITHUB_ENV; echo "PROD=" >> $GITHUB_ENV
-          fi
-      - run: vercel pull --yes --environment=$ENV --token=${{ secrets.VERCEL_TOKEN }}
-      - run: vercel build $PROD --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Deploy
-        run: |
-          url=$(vercel deploy --prebuilt $PROD --token=${{ secrets.VERCEL_TOKEN }})
-          echo "Deployed: $url" >> $GITHUB_STEP_SUMMARY
