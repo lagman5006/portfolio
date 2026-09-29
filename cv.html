@@ -1,588 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahmatullo Ergashev - CV / Resume</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --accent: #22d3ee;
-            --dark: #0f172a;
-            --darker: #020617;
-            --light: #f8fafc;
-            --gray: #94a3b8;
-            --border: rgba(255, 255, 255, 0.08);
-            --card: rgba(15, 23, 42, 0.6);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: var(--darker);
-            color: var(--light);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-            min-height: 100vh;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-        }
-
-        .actions-bar {
-            max-width: 900px;
-            margin: 0 auto 1.5rem auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .btn-back {
-            color: var(--gray);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .btn-back:hover {
-            color: var(--light);
-        }
-
-        .btn-print {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border: none;
-            padding: 0.7rem 1.4rem;
-            border-radius: 8px;
-            font-family: inherit;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-            transition: all 0.3s;
-        }
-
-        .btn-print:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
-        }
-
-        .cv-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        /* Header block */
-        header {
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .header-title h1 {
-            font-size: 2.5rem;
-            letter-spacing: -1px;
-            margin-bottom: 0.3rem;
-            background: linear-gradient(135deg, var(--light), var(--gray));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .header-title h2 {
-            font-size: 1.25rem;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .header-title p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-            text-align: right;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .contact-grid a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-grid a:hover {
-            color: var(--accent);
-        }
-
-        /* Main layout */
-        .cv-grid {
-            display: grid;
-            grid-template-columns: 1.8fr 1fr;
-            gap: 3rem;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            color: var(--light);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section-title span {
-            color: var(--primary);
-        }
-
-        /* Summary */
-        .summary-text {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            text-align: justify;
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .timeline-item {
-            position: relative;
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.4rem;
-        }
-
-        .timeline-header h3 {
-            font-size: 1.1rem;
-            color: var(--light);
-        }
-
-        .timeline-header h3 span {
-            font-size: 0.9rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .timeline-date {
-            font-size: 0.85rem;
-            color: var(--primary);
-            font-weight: 600;
-            background: rgba(99, 102, 241, 0.1);
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        .timeline-desc {
-            color: var(--gray);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            list-style: none;
-        }
-
-        .timeline-desc li {
-            position: relative;
-            padding-left: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-desc li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* Sidebar lists */
-        .sidebar-section {
-            margin-bottom: 2.2rem;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            font-size: 0.8rem;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            color: var(--light);
-            font-weight: 500;
-        }
-
-        .edu-item {
-            margin-bottom: 1.2rem;
-        }
-
-        .edu-item h3 {
-            font-size: 0.95rem;
-            color: var(--light);
-        }
-
-        .edu-item p {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .edu-date {
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .language-item {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 0.4rem;
-        }
-
-        .language-item span:first-child {
-            color: var(--light);
-            font-weight: 500;
-        }
-
-        /* Print Media Styles: Optimize layout for exactly 1 page print */
-        @media print {
-            body {
-                background-color: #ffffff;
-                color: #0f172a;
-                padding: 0;
-                font-size: 8.5pt;
-            }
-
-            .actions-bar {
-                display: none;
-            }
-
-            .cv-container {
-                border: none;
-                padding: 0;
-                background: transparent;
-                box-shadow: none;
-                max-width: 100%;
-                width: 100%;
-            }
-
-            header {
-                border-bottom: 2px solid #e2e8f0;
-                padding-bottom: 1.2rem;
-                margin-bottom: 1.2rem;
-            }
-
-            .header-title h1 {
-                color: #0f172a;
-                -webkit-text-fill-color: #0f172a;
-                background: none;
-                font-size: 20pt;
-            }
-
-            .header-title h2 {
-                color: #4f46e5;
-                font-size: 11pt;
-            }
-
-            .header-title p, .contact-grid, .contact-grid a {
-                color: #475569;
-                font-size: 8pt;
-            }
-
-            .contact-grid a:hover {
-                color: #4f46e5;
-            }
-
-            .cv-grid {
-                grid-template-columns: 1.7fr 1fr;
-                gap: 1.8rem;
-            }
-
-            .section-title {
-                color: #0f172a;
-                border-bottom: 1.5px solid #e2e8f0;
-                padding-bottom: 0.3rem;
-                margin-bottom: 0.8rem;
-                font-size: 10pt;
-            }
-
-            .section-title span {
-                color: #4f46e5;
-            }
-
-            .summary-text {
-                color: #334155;
-                font-size: 8.5pt;
-                line-height: 1.5;
-                margin-bottom: 1.2rem;
-            }
-
-            .timeline {
-                gap: 1.2rem;
-            }
-
-            .timeline-header h3 {
-                font-size: 9.5pt;
-                color: #0f172a;
-            }
-
-            .timeline-header h3 span {
-                font-size: 8pt;
-                color: #0ea5e9;
-            }
-
-            .timeline-date {
-                font-size: 7.5pt;
-                color: #4f46e5;
-                background: #f0fdf4;
-                border: 1px solid #dcfce7;
-                padding: 0.1rem 0.4rem;
-            }
-
-            .timeline-desc {
-                color: #334155;
-                font-size: 8pt;
-            }
-
-            .timeline-desc li::before {
-                color: #4f46e5;
-            }
-
-            .sidebar-section {
-                margin-bottom: 1.2rem;
-            }
-
-            .skill-tag {
-                background: #f1f5f9;
-                border: 1px solid #e2e8f0;
-                color: #1e293b;
-                padding: 0.25rem 0.5rem;
-                border-radius: 4px;
-                font-size: 7.5pt;
-            }
-
-            .edu-item {
-                margin-bottom: 0.8rem;
-            }
-
-            .edu-item h3 {
-                font-size: 8.5pt;
-                color: #0f172a;
-            }
-
-            .edu-item p {
-                font-size: 7.5pt;
-                color: #475569;
-            }
-
-            .edu-date {
-                color: #0ea5e9;
-            }
-
-            .language-item {
-                font-size: 8pt;
-                color: #475569;
-            }
-
-            .language-item span:first-child {
-                color: #0f172a;
-            }
-        }
-
-        /* Responsive styling for normal web view */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .contact-grid {
-                text-align: left;
-            }
-
-            .cv-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Rahmatullo Ergashev — Resume / CV</title>
+  <meta name="description" content="Resume of Rahmatullo Ergashev — full-stack developer (Flutter, Node.js, React) from Fergana, Uzbekistan.">
+  <meta name="theme-color" content="#07080c">
+  <link rel="icon" type="image/jpeg" href="images/avatar.jpg?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>
+    // Til: ?lang= → saqlangan tanlov (asosiy sayt bilan umumiy) → brauzer tili → en
+    (function () {
+      var ok = ["en", "uz", "ru"], q = new URLSearchParams(location.search).get("lang"), s = null;
+      try { s = localStorage.getItem("lang"); } catch (e) {}
+      var b = (navigator.language || "en").slice(0, 2);
+      var l = ok.indexOf(q) > -1 ? q : ok.indexOf(s) > -1 ? s : ok.indexOf(b) > -1 ? b : "en";
+      document.documentElement.lang = l;
+      document.documentElement.dataset.lang = l;
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #07080c;
+      --paper: #ffffff;
+      --ink: #0f1115;
+      --ink-2: #3b3f4b;
+      --muted: #6b7080;
+      --line: #e6e7ec;
+      --chip: #f3f2fb;
+      --chip-line: #ebe8fb;
+      --accent: #6d28d9;
+      --accent-soft: #c4b5fd;
+      --accent-2: #0891b2;
+      --grad: linear-gradient(120deg, #8b5cf6 0%, #6d28d9 45%, #0891b2 100%);
+      --font: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --serif: "Instrument Serif", Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; min-height: 100vh; font-family: var(--font); font-size: 16px; line-height: 1.55;
+      color: var(--ink); -webkit-font-smoothing: antialiased;
+      background:
+        radial-gradient(50% 40% at 0% 0%, rgb(109 40 217 / 0.35), transparent 70%),
+        radial-gradient(40% 35% at 100% 0%, rgb(8 145 178 / 0.25), transparent 70%),
+        var(--bg);
+      padding: max(16px, env(safe-area-inset-top)) 16px 48px;
+    }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p { margin: 0; }
+    ul { margin: 0; padding: 0; list-style: none; }
+
+    /* Faqat tanlangan tildagi matn ko'rinadi */
+    [data-l] { display: none; }
+    html[data-lang="en"] [data-l="en"],
+    html[data-lang="uz"] [data-l="uz"],
+    html[data-lang="ru"] [data-l="ru"] { display: inline; }
+
+    /* ---------- Toolbar (faqat ekranda) ---------- */
+    .toolbar {
+      width: min(210mm, 100%); margin: 0 auto 16px;
+      display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .tb-right { display: flex; gap: 10px; align-items: center; }
+    .tb-btn {
+      display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 18px;
+      border-radius: 999px; font: 500 0.9rem var(--font); cursor: pointer; white-space: nowrap;
+      color: #eef0f6; border: 1px solid rgb(255 255 255 / 0.14); background: rgb(255 255 255 / 0.05);
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .tb-btn:hover { background: rgb(255 255 255 / 0.1); border-color: rgb(255 255 255 / 0.3); transform: translateY(-1px); }
+    .tb-btn--primary { border-color: transparent; background: linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 10px 30px -10px rgb(139 92 246 / 0.7); }
+    .tb-btn--primary:hover { background: linear-gradient(135deg, #9b6dff, #7c3aed); }
+    .lang-switch { display: inline-flex; padding: 4px; gap: 2px; border-radius: 999px; border: 1px solid rgb(255 255 255 / 0.14); background: rgb(255 255 255 / 0.05); }
+    .lang-switch button {
+      border: 0; background: none; color: #8a8fa3; font: 600 0.78rem var(--mono); letter-spacing: 0.04em;
+      height: 32px; min-width: 40px; padding: 0 10px; border-radius: 999px; cursor: pointer; transition: color 0.2s, background 0.2s;
+    }
+    .lang-switch button:hover { color: #eef0f6; }
+    .lang-switch button[aria-pressed="true"] { background: #eef0f6; color: #07080c; }
+
+    /* ---------- Paper ---------- */
+    .paper {
+      width: min(210mm, 100%); min-height: 297mm; margin: 0 auto;
+      background: var(--paper); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 40px 100px -30px rgb(0 0 0 / 0.8);
+      padding: 44px 48px 36px;
+    }
+
+    .head { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+    .avatar { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; object-position: center 32%; border: 3px solid #fff; box-shadow: 0 0 0 2px var(--accent-soft); }
+    .name { font-size: 2.35rem; line-height: 1.05; letter-spacing: -0.045em; font-weight: 650; }
+    .role { margin-top: 6px; font-size: 1.05rem; color: var(--ink-2); }
+    .role em {
+      font-family: var(--serif); font-size: 1.2em; font-weight: 400;
+      background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .contacts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 4px; }
+    .contacts a, .contacts > span {
+      display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: 999px;
+      font-size: 0.8rem; color: var(--ink-2); background: var(--chip); border: 1px solid var(--chip-line);
+    }
+    .contacts svg { width: 13px; height: 13px; flex: none; color: var(--accent); }
+    .contacts a:hover { border-color: var(--accent-soft); color: var(--ink); }
+
+    .body { display: grid; grid-template-columns: 1fr 34%; gap: 36px; padding-top: 24px; }
+    .main, .side { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+
+    .sec-title {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+    }
+    .sec-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+    .summary { color: var(--ink-2); font-size: 0.92rem; }
+
+    .job { position: relative; padding-left: 20px; }
+    .job + .job { margin-top: 20px; }
+    .job::before { content: ""; position: absolute; left: 3px; top: 10px; bottom: -14px; width: 1px; background: var(--line); }
+    .job:last-child::before { bottom: 0; }
+    .job::after { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #fff; border: 2px solid var(--accent-soft); }
+    .job--now::after { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 0 3px rgb(109 40 217 / 0.15); }
+    .job-top { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 12px; flex-wrap: wrap; }
+    .job h3 { font-size: 1.02rem; font-weight: 600; letter-spacing: -0.015em; }
+    .job h3 a { color: var(--accent); }
+    .when { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+    .job-sub { font-size: 0.84rem; color: var(--muted); margin: 2px 0 6px; }
+
+    .proj { margin-top: 10px; }
+    .proj-name { font-size: 0.9rem; font-weight: 600; }
+    .proj-name .tag { margin-left: 6px; font-family: var(--mono); font-size: 0.64rem; font-weight: 500; color: var(--accent-2); vertical-align: 1px; }
+    .bullets { margin-top: 3px; display: flex; flex-direction: column; gap: 3px; }
+    .bullets li { position: relative; padding-left: 14px; font-size: 0.84rem; color: var(--ink-2); }
+    .bullets li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-soft); }
+
+    .skill-group + .skill-group { margin-top: 12px; }
+    .skill-group h3 { font-size: 0.8rem; font-weight: 600; margin-bottom: 6px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .chips li { font-size: 0.74rem; padding: 3px 9px; border-radius: 7px; background: var(--chip); color: var(--ink-2); border: 1px solid var(--chip-line); }
+
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat { padding: 10px 6px; border-radius: 12px; border: 1px solid var(--line); text-align: center; }
+    .stat b { display: block; font-size: 1.35rem; letter-spacing: -0.04em; line-height: 1.1; }
+    .stat > span { font-size: 0.66rem; color: var(--muted); line-height: 1.25; display: block; margin-top: 3px; }
+
+    .edu li + li { margin-top: 10px; }
+    .edu b { display: block; font-size: 0.88rem; font-weight: 600; }
+    .edu .sub { font-size: 0.8rem; color: var(--muted); }
+
+    .langs li { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 0.86rem; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+    .langs li:last-child { border-bottom: 0; }
+    .langs .lvl { font-size: 0.74rem; color: var(--muted); }
+
+    .foot { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 0.72rem; color: var(--muted); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 760px) {
+      body { padding: max(12px, env(safe-area-inset-top)) 10px 32px; }
+      .paper { min-height: 0; padding: 28px 22px; border-radius: 18px; }
+      .body { grid-template-columns: 1fr; gap: 24px; }
+      .side { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .side > .skills, .side > .glance { grid-column: 1 / -1; }
+    }
+    @media (max-width: 480px) {
+      .tb-btn { padding: 0 14px; }
+      .head { grid-template-columns: 1fr; gap: 14px; }
+      .avatar { width: 76px; height: 76px; }
+      .name { font-size: 1.9rem; }
+      .side { grid-template-columns: 1fr; }
+      .contacts a, .contacts > span { font-size: 0.76rem; }
+    }
+
+    /* ---------- Print / PDF (A4) ---------- */
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: #fff; padding: 0; font-size: 13.6px; }
+      .toolbar { display: none; }
+      .paper { width: 210mm; min-height: 297mm; border-radius: 0; box-shadow: none; padding: 13mm 13mm 10mm; }
+      .body { grid-template-columns: 1fr 32%; gap: 8mm; }
+      .side { display: flex; }
+      .job, .proj, .skill-group, .edu li { break-inside: avoid; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
 </head>
 <body>
-    <div class="actions-bar">
-        <a href="index.html" class="btn-back">← Back to Portfolio</a>
-        <button class="btn-print" onclick="window.print()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 6 2 18 2 18 9"></polyline>
-                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-                <rect x="6" y="14" width="12" height="8"></rect>
-            </svg>
-            Save PDF / Print CV
-        </button>
+  <div class="toolbar">
+    <a href="index.html" class="tb-btn">← <span data-l="en">Portfolio</span><span data-l="uz">Portfolio</span><span data-l="ru">Портфолио</span></a>
+    <div class="tb-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-set-lang="uz">UZ</button>
+        <button type="button" data-set-lang="ru">RU</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+      <button type="button" class="tb-btn tb-btn--primary" data-print>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+        PDF
+      </button>
+    </div>
+  </div>
+
+  <main class="paper">
+    <header class="head">
+      <img class="avatar" src="images/avatar.jpg?v=3" width="92" height="92" alt="Rahmatullo Ergashev">
+      <div>
+        <h1 class="name">Rahmatullo Ergashev</h1>
+        <p class="role"><span data-l="en">Full-Stack Developer</span><span data-l="uz">Full-Stack dasturchi</span><span data-l="ru">Full-Stack разработчик</span> — <em><span data-l="en">mobile, web &amp; backend</span><span data-l="uz">mobil, veb va backend</span><span data-l="ru">мобильная, веб и бэкенд-разработка</span></em></p>
+      </div>
+      <div class="contacts">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-l="en">Fergana, Uzbekistan · Remote</span><span data-l="uz">Farg'ona, O'zbekiston · Masofaviy</span><span data-l="ru">Фергана, Узбекистан · Удалённо</span></span>
+        <a href="tel:+998990375006"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+998 99 037 5006</a>
+        <a href="mailto:asliddin5006@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg>asliddin5006@gmail.com</a>
+        <a href="https://t.me/lagman5006" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.8 15.3 9.4 20c.6 0 .8-.2 1.1-.5l2.6-2.5 5.4 4c1 .6 1.7.3 2-.9l3.5-16.6c.3-1.5-.5-2-1.5-1.7L1.6 9.9C.1 10.5.1 11.3 1.3 11.7l5.3 1.6L18.9 5.6c.6-.4 1.1-.2.7.2"/></svg>t.me/lagman5006</a>
+        <a href="https://github.com/lagman5006" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>github.com/lagman5006</a>
+        <a href="https://www.linkedin.com/in/rahmatulloh-ergashev/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg>in/rahmatulloh-ergashev</a>
+      </div>
+    </header>
+
+    <div class="body">
+      <div class="main">
+        <section>
+          <h2 class="sec-title"><span data-l="en">Profile</span><span data-l="uz">Men haqimda</span><span data-l="ru">Обо мне</span></h2>
+          <p class="summary"><span data-l="en">Full-stack developer who builds complete products end-to-end — Flutter apps for iOS &amp; Android, React admin panels and websites, and the Node.js APIs and databases behind them. I ship to production: attendance systems with on-device face recognition and live GPS tracking, marketplaces, retail &amp; warehouse tools, a factory accounting system and a media streaming platform — most of them live on the App Store and Google Play. Comfortable with Clean Architecture, BLoC / Riverpod, REST, WebSockets, push notifications and CI/CD.</span><span data-l="uz">Mahsulotlarni boshidan oxirigacha yarataman: iOS va Android uchun Flutter ilovalar, React'da admin panellar va saytlar hamda ularning ortidagi Node.js API va ma'lumotlar bazalari. Ishlaydigan loyihalarni ishga tushiraman: qurilmada yuzni tanish va jonli GPS kuzatuvli davomat tizimlari, marketpleyslar, savdo va ombor dasturlari, zavod hisob-kitob tizimi va media-striming platformasi — ularning aksariyati App Store va Google Play'da. Clean Architecture, BLoC / Riverpod, REST, WebSocket, push-bildirishnomalar va CI/CD bilan erkin ishlayman.</span><span data-l="ru">Full-stack разработчик: создаю продукты под ключ — Flutter-приложения для iOS и Android, админ-панели и сайты на React, а также API и базы данных на Node.js. Запускаю проекты в продакшн: системы учёта посещаемости с распознаванием лиц на устройстве и GPS-трекингом в реальном времени, маркетплейсы, решения для торговли и склада, учётную систему для завода и медиаплатформу со стримингом — большинство из них в App Store и Google Play. Уверенно работаю с Clean Architecture, BLoC / Riverpod, REST, WebSocket, push-уведомлениями и CI/CD.</span></p>
+        </section>
+
+        <section>
+          <h2 class="sec-title"><span data-l="en">Experience</span><span data-l="uz">Ish tajribasi</span><span data-l="ru">Опыт работы</span></h2>
+
+          <article class="job job--now">
+            <div class="job-top">
+              <h3><span data-l="en">Flutter Developer</span><span data-l="uz">Flutter dasturchi</span><span data-l="ru">Flutter-разработчик</span> · <a href="https://it-progress.uz/" target="_blank" rel="noopener">IT Progress</a></h3>
+              <span class="when"><span data-l="en">Jul 2026 — Present</span><span data-l="uz">2026-yil iyul — hozirgacha</span><span data-l="ru">Июль 2026 — наст. время</span></span>
+            </div>
+            <p class="job-sub"><span data-l="en">Developing and maintaining the company's production mobile apps.</span><span data-l="uz">Kompaniyaning ishlab turgan mobil ilovalarini ishlab chiqaman va qo'llab-quvvatlayman.</span><span data-l="ru">Разрабатываю и поддерживаю рабочие мобильные приложения компании.</span></p>
+            <div class="proj"><p class="proj-name">Skor Xodimlar <span class="tag"><span data-l="en">App Store · Google Play</span><span data-l="uz">App Store · Google Play</span><span data-l="ru">App Store · Google Play</span></span></p><ul class="bullets"><li><span data-l="en">Staff attendance with ML Kit face verification inside manager-assigned GPS geofences.</span><span data-l="uz">Rahbar belgilagan GPS hudud ichida ML Kit yuz tekshiruvi bilan xodimlar davomati.</span><span data-l="ru">Учёт посещаемости сотрудников с проверкой лица (ML Kit) внутри GPS-зон, заданных руководителем.</span></li><li><span data-l="en">Real-time map of field staff with movement history (Yandex MapKit, background location).</span><span data-l="uz">Xodimlarning harakat tarixi bilan jonli xaritasi (Yandex MapKit, fondagi joylashuv).</span><span data-l="ru">Карта сотрудников в реальном времени с историей перемещений (Yandex MapKit, фоновая геолокация).</span></li><li><span data-l="en">Manager dashboard: daily / monthly reports, latecomers, leave requests and payroll; 4 languages.</span><span data-l="uz">Rahbar paneli: kunlik / oylik hisobotlar, kechikkanlar, arizalar va ish haqi; 4 til.</span><span data-l="ru">Панель руководителя: дневные и месячные отчёты, опоздания, заявки и зарплата; 4 языка.</span></li></ul></div><div class="proj"><p class="proj-name">Skor Maktab <span class="tag"><span data-l="en">App Store · Google Play</span><span data-l="uz">App Store · Google Play</span><span data-l="ru">App Store · Google Play</span></span></p><ul class="bullets"><li><span data-l="en">Face-ID school attendance with instant arrival / departure push notifications for parents.</span><span data-l="uz">Maktabda Face-ID davomat: ota-onalarga kelish / ketish haqida darhol push-xabar.</span><span data-l="ru">Посещаемость школы по Face-ID с мгновенными push-уведомлениями родителям о приходе и уходе.</span></li><li><span data-l="en">Class management, attendance statistics, AI analysis, Excel export and Click subscription payments.</span><span data-l="uz">Sinflarni boshqarish, davomat statistikasi, AI tahlil, Excel eksport va Click orqali obuna to'lovi.</span><span data-l="ru">Управление классами, статистика посещаемости, AI-аналитика, экспорт в Excel и оплата подписки через Click.</span></li></ul></div><div class="proj"><p class="proj-name">Toyxona.uz <span class="tag"><span data-l="en">App Store · Google Play</span><span data-l="uz">App Store · Google Play</span><span data-l="ru">App Store · Google Play</span></span></p><ul class="bullets"><li><span data-l="en">Wedding-venue marketplace: availability calendar, booking requests, chat, reviews and referrals.</span><span data-l="uz">To'yxonalar marketpleysi: bandlik kalendari, bron so'rovlari, chat, sharhlar va referallar.</span><span data-l="ru">Маркетплейс свадебных залов: календарь занятости, заявки на бронь, чат, отзывы и рефералы.</span></li><li><span data-l="en">Separate panels for venue owners and service providers; OTP, Google and Apple sign-in.</span><span data-l="uz">To'yxona egalari va xizmat ko'rsatuvchilar uchun alohida panellar; OTP, Google va Apple orqali kirish.</span><span data-l="ru">Отдельные панели для владельцев залов и исполнителей услуг; вход по OTP, Google и Apple.</span></li></ul></div><div class="proj"><p class="proj-name">Osiyo Bozor</p><ul class="bullets"><li><span data-l="en">Sales &amp; warehouse app for a building-materials market: POS, stock control and fiscal-receipt QR scanning.</span><span data-l="uz">Qurilish mollari bozori uchun savdo va ombor ilovasi: kassa, qoldiq nazorati va soliq cheki QR skaneri.</span><span data-l="ru">Приложение продаж и склада для рынка стройматериалов: касса, контроль остатков и сканирование QR фискальных чеков.</span></li><li><span data-l="en">Offline-first on SQLite with silent token refresh; Riverpod + GoRouter.</span><span data-l="uz">SQLite asosida internetsiz ishlaydi, token jimgina yangilanadi; Riverpod + GoRouter.</span><span data-l="ru">Работает офлайн на SQLite с тихим обновлением токена; Riverpod + GoRouter.</span></li></ul></div>
+          </article>
+
+          <article class="job">
+            <div class="job-top">
+              <h3><span data-l="en">Full-Stack Developer · Freelance</span><span data-l="uz">Full-Stack dasturchi · Frilans</span><span data-l="ru">Full-Stack разработчик · Фриланс</span></h3>
+              <span class="when"><span data-l="en">2025 — Present</span><span data-l="uz">2025 — hozirgacha</span><span data-l="ru">2025 — наст. время</span></span>
+            </div>
+            <p class="job-sub"><span data-l="en">Complete products for clients — mobile app, admin panel and API.</span><span data-l="uz">Mijozlar uchun tayyor mahsulotlar — mobil ilova, admin panel va API.</span><span data-l="ru">Продукты под ключ для клиентов — мобильное приложение, админ-панель и API.</span></p>
+            <div class="proj"><p class="proj-name">AZKO Zavod <span class="tag">Node.js · React · Flutter</span></p><ul class="bullets"><li><span data-l="en">Accounting system for a cottonseed oil factory: raw materials, production, warehouse, sales and debts.</span><span data-l="uz">Paxta yog'i zavodi uchun hisob-kitob tizimi: xomashyo, ishlab chiqarish, ombor, savdo va qarzlar.</span><span data-l="ru">Учётная система маслозавода: сырьё, производство, склад, продажи и долги.</span></li><li><span data-l="en">Express + MySQL API with cron auto-press jobs, PDF receipts, Excel export and SMS reminders (Eskiz).</span><span data-l="uz">Express + MySQL API: cron orqali avto-press, PDF cheklar, Excel eksport va SMS eslatmalar (Eskiz).</span><span data-l="ru">API на Express + MySQL: автопресс по cron, PDF-чеки, экспорт в Excel и SMS-напоминания (Eskiz).</span></li><li><span data-l="en">React admin panel and a Flutter app with worker and director roles; CI/CD deploy.</span><span data-l="uz">React admin panel va ishchi hamda direktor rollari bilan Flutter ilova; CI/CD deploy.</span><span data-l="ru">Админ-панель на React и Flutter-приложение с ролями рабочего и директора; деплой через CI/CD.</span></li></ul></div><div class="proj"><p class="proj-name">Xayrulla Hamidov TV <span class="tag">Node.js · React · Flutter</span></p><ul class="bullets"><li><span data-l="en">Football media platform: highlights, full matches, podcasts, shorts and live HLS streams.</span><span data-l="uz">Futbol media platformasi: sharhlar, to'liq o'yinlar, podkastlar, shorts va jonli HLS efir.</span><span data-l="ru">Футбольная медиаплатформа: хайлайты, полные матчи, подкасты, shorts и прямые HLS-трансляции.</span></li><li><span data-l="en">Real-time analytics over WebSockets, push campaigns (FCM), uploads to S3-compatible storage.</span><span data-l="uz">WebSocket orqali real vaqtda analitika, push-kampaniyalar (FCM), S3-mos xotiraga yuklash.</span><span data-l="ru">Аналитика в реальном времени через WebSocket, push-рассылки (FCM), загрузка в S3-совместимое хранилище.</span></li></ul></div><div class="proj"><p class="proj-name">TDYU Endowment Fund <span class="tag">fond.yuretta.uz</span></p><ul class="bullets"><li><span data-l="en">University endowment website and merch shop (React, Tailwind, Leaflet) with two admin panels.</span><span data-l="uz">Universitet endaument fondi sayti va merch do'koni (React, Tailwind, Leaflet), ikkita admin panel bilan.</span><span data-l="ru">Сайт эндаумент-фонда университета и мерч-магазин (React, Tailwind, Leaflet) с двумя админ-панелями.</span></li><li><span data-l="en">Node.js API, donations, alumni world map, orders and analytics; deployed on Nginx with HTTPS.</span><span data-l="uz">Node.js API, xayriyalar, bitiruvchilar xaritasi, buyurtmalar va analitika; Nginx + HTTPS'da ishlaydi.</span><span data-l="ru">API на Node.js, пожертвования, карта выпускников, заказы и аналитика; развёрнуто на Nginx с HTTPS.</span></li></ul></div>
+          </article>
+
+          <article class="job">
+            <div class="job-top">
+              <h3><span data-l="en">Mobile Developer · StartUp program, Najot Ta'lim</span><span data-l="uz">Mobil dasturchi · StartUp dasturi, Najot Ta'lim</span><span data-l="ru">Мобильный разработчик · StartUp-программа, Najot Ta'lim</span></h3>
+              <span class="when">2025 — 2026</span>
+            </div>
+            <ul class="bullets">
+              <li><span data-l="en">Team product development and store releases; design patterns and Clean Architecture in practice.</span><span data-l="uz">Jamoada mahsulot yaratish va do'konlarga chiqarish; dizayn patternlar va Clean Architecture amalda.</span><span data-l="ru">Командная разработка продуктов и публикация в сторах; паттерны проектирования и Clean Architecture на практике.</span></li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <h2 class="sec-title"><span data-l="en">Personal projects</span><span data-l="uz">Shaxsiy loyihalar</span><span data-l="ru">Личные проекты</span></h2>
+          <div class="proj"><p class="proj-name">Yurist AI <span class="tag"><span data-l="en">App Store · Google Play</span><span data-l="uz">App Store · Google Play</span><span data-l="ru">App Store · Google Play</span></span></p><ul class="bullets"><li><span data-l="en">AI legal assistant for Uzbekistan: consultations, document drafting, Lex.uz search and a specialist directory.</span><span data-l="uz">O'zbekiston uchun AI yuridik yordamchi: maslahatlar, hujjat tayyorlash, Lex.uz qidiruvi va mutaxassislar katalogi.</span><span data-l="ru">AI-юрист для Узбекистана: консультации, составление документов, поиск по Lex.uz и каталог специалистов.</span></li></ul></div><div class="proj"><p class="proj-name">Zonic <span class="tag"><span data-l="en">App Store · Google Play</span><span data-l="uz">App Store · Google Play</span><span data-l="ru">App Store · Google Play</span></span></p><ul class="bullets"><li><span data-l="en">Running &amp; territory-control app: GPS runs capture map zones, leaderboards, clans, market and chat.</span><span data-l="uz">Yugurish va hudud egallash ilovasi: GPS yugurish orqali xaritada zona egallash, reyting, klanlar, market va chat.</span><span data-l="ru">Приложение для бега и захвата территорий: GPS-пробежки захватывают зоны на карте, рейтинги, кланы, маркет и чат.</span></li></ul></div><div class="proj"><p class="proj-name">Avtomaktab <span class="tag"><span data-l="en">Desktop</span><span data-l="uz">Desktop</span><span data-l="ru">Десктоп</span></span></p><ul class="bullets"><li><span data-l="en">Offline driving-licence exam prep with 1000+ questions, timed exams and progress statistics.</span><span data-l="uz">Haydovchilik imtihoniga tayyorlov: 1000+ savol, vaqtli imtihonlar va natijalar statistikasi, internetsiz.</span><span data-l="ru">Подготовка к экзамену на права офлайн: 1000+ вопросов, экзамены на время и статистика прогресса.</span></li></ul></div>
+        </section>
+      </div>
+
+      <aside class="side">
+        <section class="glance">
+          <h2 class="sec-title"><span data-l="en">At a glance</span><span data-l="uz">Qisqacha</span><span data-l="ru">Кратко</span></h2>
+          <div class="stat-row">
+            <div class="stat"><b>10</b><span><span data-l="en">products built</span><span data-l="uz">ta mahsulot</span><span data-l="ru">продуктов</span></span></div>
+            <div class="stat"><b>5</b><span><span data-l="en">live in stores</span><span data-l="uz">ta do'konlarda</span><span data-l="ru">в сторах</span></span></div>
+            <div class="stat"><b>2+</b><span><span data-l="en">years</span><span data-l="uz">yil tajriba</span><span data-l="ru">года опыта</span></span></div>
+          </div>
+        </section>
+
+        <section class="skills">
+          <h2 class="sec-title"><span data-l="en">Skills</span><span data-l="uz">Ko'nikmalar</span><span data-l="ru">Навыки</span></h2>
+          <div class="skill-group">
+            <h3><span data-l="en">Mobile</span><span data-l="uz">Mobil</span><span data-l="ru">Мобильная разработка</span></h3>
+            <ul class="chips"><li>Flutter</li><li>Dart</li><li>BLoC</li><li>Riverpod</li><li>Provider</li><li>Clean Architecture</li><li>ML Kit</li><li><span data-l="en">Maps &amp; Geolocation</span><span data-l="uz">Xarita va geolokatsiya</span><span data-l="ru">Карты и геолокация</span></li><li>Hive / SQLite</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3><span data-l="en">Web</span><span data-l="uz">Veb</span><span data-l="ru">Веб</span></h3>
+            <ul class="chips"><li>React</li><li>TypeScript</li><li>Vite</li><li>Tailwind CSS</li><li>HTML / CSS</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Backend</h3>
+            <ul class="chips"><li>Node.js</li><li>Express</li><li>REST API</li><li>WebSocket</li><li>MySQL</li><li>PostgreSQL</li><li>Prisma / Knex</li><li>JWT</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3><span data-l="en">Cloud &amp; tools</span><span data-l="uz">Bulut va vositalar</span><span data-l="ru">Облако и инструменты</span></h3>
+            <ul class="chips"><li>Firebase / FCM</li><li>Docker</li><li>Nginx</li><li>CI/CD</li><li>S3 / R2</li><li>Git</li></ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="sec-title"><span data-l="en">Education</span><span data-l="uz">Ta'lim</span><span data-l="ru">Образование</span></h2>
+          <ul class="edu">
+            <li><b><span data-l="en">Flutter Bootcamp</span><span data-l="uz">Flutter Bootcamp</span><span data-l="ru">Flutter Bootcamp</span></b><span class="sub">Najot Ta'lim · <span data-l="en">Graduated</span><span data-l="uz">Tamomlagan</span><span data-l="ru">Окончил</span></span></li>
+            <li><b><span data-l="en">Programming Foundation</span><span data-l="uz">Dasturlash asoslari</span><span data-l="ru">Основы программирования</span></b><span class="sub">Najot Ta'lim · <span data-l="en">Graduated</span><span data-l="uz">Tamomlagan</span><span data-l="ru">Окончил</span></span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="sec-title"><span data-l="en">Languages</span><span data-l="uz">Tillar</span><span data-l="ru">Языки</span></h2>
+          <ul class="langs">
+            <li><span data-l="en">Uzbek</span><span data-l="uz">O'zbek</span><span data-l="ru">Узбекский</span> <span class="lvl"><span data-l="en">Native</span><span data-l="uz">Ona tili</span><span data-l="ru">Родной</span></span></li>
+            <li><span data-l="en">Russian</span><span data-l="uz">Rus</span><span data-l="ru">Русский</span> <span class="lvl"><span data-l="en">Professional</span><span data-l="uz">Erkin</span><span data-l="ru">Свободно</span></span></li>
+            <li><span data-l="en">English</span><span data-l="uz">Ingliz</span><span data-l="ru">Английский</span> <span class="lvl"><span data-l="en">Professional</span><span data-l="uz">Erkin</span><span data-l="ru">Свободно</span></span></li>
+          </ul>
+        </section>
+      </aside>
     </div>
 
-    <div class="cv-container">
-        <header>
-            <div class="header-title">
-                <h1>Rahmatullo Ergashev</h1>
-                <h2>Professional Flutter Developer</h2>
-                <p>Fergana, Uzbekistan • Open to Work / Remote</p>
-            </div>
-            <div class="contact-grid">
-                <a href="tel:+998990375006">📞 +998 99 037 5006</a>
-                <a href="mailto:asliddin5006@gmail.com">✉ asliddin5006@gmail.com</a>
-                <a href="https://github.com/lagman5006" target="_blank">🐙 github.com/lagman5006</a>
-                <a href="https://linkedin.com/in/rahmatulloh-ergashev" target="_blank">💼 linkedin.com/in/rahmatulloh-ergashev</a>
-            </div>
-        </header>
+    <footer class="foot">
+      <span>Rahmatullo Ergashev · <span data-l="en">Full-Stack Developer</span><span data-l="uz">Full-Stack dasturchi</span><span data-l="ru">Full-Stack разработчик</span></span>
+      <span><span data-l="en">Updated September 2026</span><span data-l="uz">Yangilangan: 2026-yil sentabr</span><span data-l="ru">Обновлено: сентябрь 2026</span></span>
+    </footer>
+  </main>
 
-        <div class="cv-grid">
-            <!-- Left Column: Summary & Projects -->
-            <main>
-                <section>
-                    <h2 class="section-title"><span>■</span> Profile Summary</h2>
-                    <p class="summary-text">
-                        Dynamic and results-driven Flutter Developer with over one year of experience crafting premium, high-performance, cross-platform mobile applications. Well-versed in implementing Clean Architecture, SOLID principles, MVVM, and state management frameworks (BLoC, Provider). Adept at building location-aware discovery services, interactive educational portals, and reservation platforms with active releases on the Apple App Store.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="section-title"><span>■</span> Core Projects</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-header">
-                                <h3>Yurist AI <span>(App Store & Google Play)</span></h3>
-                                <span class="timeline-date">Featured</span>
-                            </div>
-                            <ul class="timeline-desc">
-                                <li>Developed a smart, cross-platform legal assistant mobile application tailored for Uzbekistan legislation.</li>
-                                <li>Integrated AI model capabilities providing high-accuracy legal advice and automated document drafting.</li>
-                                <li>Implemented official Lex.uz database search functionality and a categorized legal specialist directory.</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-header">
-                                <h3>Zonic App <span>(App Store)</span></h3>
-                                <span class="timeline-date">Finished</span>
-                            </div>
-                            <ul class="timeline-desc">
-                                <li>Built a wellness assistant logging daily steps, workouts, and wellness stats.</li>
-                                <li>Engineered local caching using Hive NoSQL DB for complete offline performance.</li>
-                                <li>Crafted premium dark mode interfaces with custom statistical progress graphs.</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-header">
-                                <h3>Avtomaktab <span>(Desktop)</span></h3>
-                                <span class="timeline-date">Finished</span>
-                            </div>
-                            <ul class="timeline-desc">
-                                <li>Built an offline driving school exam prep desktop application with over 1000 questions.</li>
-                                <li>Programmed local practice exams, statistics, progress logs, and multi-language support.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <!-- Right Column: Skills, Education, Languages -->
-            <aside>
-                <div class="sidebar-section">
-                    <h2 class="section-title"><span>■</span> Technical Skills</h2>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Flutter SDK</span>
-                        <span class="skill-tag">Dart Language</span>
-                        <span class="skill-tag">Clean Architecture</span>
-                        <span class="skill-tag">BLoC / Provider</span>
-                        <span class="skill-tag">MVVM Pattern</span>
-                        <span class="skill-tag">OOP & SOLID</span>
-                        <span class="skill-tag">REST API (Dio)</span>
-                        <span class="skill-tag">Firebase Core</span>
-                        <span class="skill-tag">Hive / NoSQL DB</span>
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Responsive UI/UX</span>
-                        <span class="skill-tag">Agile / Scrum</span>
-                    </div>
-                </div>
-
-                <div class="sidebar-section">
-                    <h2 class="section-title"><span>■</span> Education</h2>
-                    <div class="edu-item">
-                        <h3>Najot Ta'lim</h3>
-                        <p>Flutter Bootcamp Graduate</p>
-                        <p class="edu-date">2024 - 2025</p>
-                    </div>
-                    <div class="edu-item">
-                        <h3>Najot Ta'lim</h3>
-                        <p>Programming Foundation Course</p>
-                        <p class="edu-date">2024 - 2025</p>
-                    </div>
-                </div>
-
-                <div class="sidebar-section">
-                    <h2 class="section-title"><span>■</span> Languages</h2>
-                    <div class="language-item">
-                        <span>Uzbek</span>
-                        <span>Native</span>
-                    </div>
-                    <div class="language-item">
-                        <span>English</span>
-                        <span>Professional</span>
-                    </div>
-                    <div class="language-item">
-                        <span>Russian</span>
-                        <span>Professional</span>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </div>
+  <script>
+    (function () {
+      var titles = { en: "Rahmatullo Ergashev — Resume / CV", uz: "Rahmatullo Ergashev — Rezyume", ru: "Rahmatullo Ergashev — Резюме" };
+      var buttons = document.querySelectorAll("[data-set-lang]");
+      function apply(l) {
+        document.documentElement.lang = l;
+        document.documentElement.dataset.lang = l;
+        document.title = titles[l];
+        buttons.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.setLang === l); });
+        try { localStorage.setItem("lang", l); } catch (e) {}
+      }
+      buttons.forEach(function (b) { b.addEventListener("click", function () { apply(b.dataset.setLang); }); });
+      apply(document.documentElement.dataset.lang);
+      document.querySelector("[data-print]").addEventListener("click", function () { window.print(); });
+    })();
+  </script>
 </body>
 </html>

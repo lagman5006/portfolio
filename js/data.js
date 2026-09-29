@@ -181,22 +181,23 @@ window.PORTFOLIO = {
     {
       id: "zonic",
       title: "Zonic",
-      tagline: "Health & fitness companion",
+      tagline: "Run, capture territory, compete",
       type: "mobile",
       frame: "phone",
       year: 2026,
       summary:
-        "Tracks steps, workouts and sleep with beautiful data visualisations and full offline support.",
+        "A running game on a live map: every GPS run captures territory — with leaderboards, clans, challenges, a market and chat.",
       description:
-        "Zonic is an elegant health and fitness tracker that helps users monitor activity, workouts, sleep and overall wellness. Local caching keeps it working flawlessly offline, and custom-painted charts turn the data into something people actually enjoy looking at.",
+        "Zonic turns running into a territory-control game. Each run is tracked by GPS, and the loop you close becomes your zone on a live Yandex map. Runners compete on global, country and city leaderboards by distance, territory and steps, team up in clans, take on challenges, customise their profile in the in-app market and chat in real time — including voice messages. Profiles show weekly activity, pace and personal records.",
       features: [
-        "Daily activity, step count and workout log",
-        "Personal goals with interactive progress indicators",
-        "Premium dark-mode dashboard",
-        "Weekly and monthly charts & statistics",
-        "NoSQL local cache for complete offline use",
+        "GPS run tracking that captures zones on a live map",
+        "Leaderboards by distance, territory and steps — global, country and city",
+        "Clans, friends, challenges and a community feed",
+        "Real-time chat with voice messages (Socket.IO)",
+        "In-app market: frames, covers and profile themes",
+        "Profile with weekly activity, pace and personal records",
       ],
-      stack: ["Flutter", "Dart", "BLoC", "Hive", "Custom Painters", "Health Sensors"],
+      stack: ["Flutter", "Dart", "BLoC", "Yandex MapKit", "Geolocator", "Socket.IO", "Pedometer", "Firebase Messaging"],
       images: [
         "images/opt/zonic/zonic-1.webp",
         "images/opt/zonic/zonic-2.webp",
