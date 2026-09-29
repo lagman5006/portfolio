@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Rahmatullo Ergashev — Full-Stack Developer</title>
   <meta name="description" content="Rahmatullo Ergashev — full-stack developer from Fergana, Uzbekistan. Mobile apps, web apps and backends built end-to-end.">
   <meta name="theme-color" content="#07080c">
@@ -14,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=15">
-  <script src="js/data.js?v=15" defer></script>
-  <script src="js/main.js?v=15" defer></script>
+  <link rel="stylesheet" href="styles.css?v=16">
+  <script src="js/data.js?v=16" defer></script>
+  <script src="js/main.js?v=16" defer></script>
 </head>
 <body>
   <div class="progress" aria-hidden="true"></div>
@@ -47,7 +47,18 @@
         <kbd data-mod-key>⌘K</kbd>
       </button>
       <a href="#contact" class="btn btn-small btn-light">Hire me</a>
+      <button class="menu-btn" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
     </div>
+    <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-label="Mobile" hidden>
+      <a href="#work">Work</a>
+      <a href="#company">IT Progress</a>
+      <a href="#services">Services</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+      <a href="cv.html" class="mobile-menu-cv">Resume / CV ↗</a>
+    </nav>
   </header>
 
   <main>

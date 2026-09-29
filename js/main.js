@@ -303,6 +303,21 @@
   );
   $$("main section[id]").forEach((s) => sectionObserver.observe(s));
 
+  // ---------- Mobile menu (≤ 820px) ----------
+  const menuBtn = $("[data-menu-toggle]");
+  const menu = $("[data-mobile-menu]");
+  function setMenu(open) {
+    menu.hidden = !open;
+    menuBtn.setAttribute("aria-expanded", open);
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    nav.classList.toggle("menu-open", open);
+  }
+  menuBtn.addEventListener("click", () => setMenu(menu.hidden));
+  menu.addEventListener("click", (e) => e.target.closest("a") && setMenu(false));
+  addEventListener("keydown", (e) => e.key === "Escape" && !menu.hidden && setMenu(false));
+  document.addEventListener("click", (e) => !menu.hidden && !nav.contains(e.target) && setMenu(false));
+  matchMedia("(min-width: 821px)").addEventListener("change", (e) => e.matches && setMenu(false));
+
   // ---------- Toast ----------
   const toastEl = $("[data-toast]");
   let toastTimer;
