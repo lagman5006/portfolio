@@ -165,10 +165,13 @@ kbd {
 }
 .nav-logo-mark {
   display: grid; place-items: center; width: 38px; height: 38px;
-  border-radius: 12px; font-weight: 700; font-size: 0.9rem; letter-spacing: -0.02em;
+  border-radius: 50%; overflow: hidden; font-weight: 700; font-size: 0.9rem; letter-spacing: -0.02em;
   background: linear-gradient(135deg, rgb(139 92 246 / 0.25), rgb(34 211 238 / 0.15));
   border: 1px solid var(--border-2);
   color: var(--accent-soft);
+}
+.nav-logo-mark img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
 }
 .nav-links { display: flex; gap: 4px; }
 .nav-links a {
