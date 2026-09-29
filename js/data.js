@@ -209,36 +209,6 @@ window.PORTFOLIO = {
       },
     },
     {
-      id: "sair",
-      title: "SAIR",
-      tagline: "Travel & location discovery assistant",
-      type: "mobile",
-      frame: "phone",
-      year: 2026,
-      summary:
-        "Helps tourists and locals discover nearby places using location-aware camera detection and live maps.",
-      description:
-        "SAIR is a location-aware travel companion that helps tourists and locals discover historical landmarks, attractions, restaurants and shops. It combines mapping and camera technologies to show real-time point-of-interest details.",
-      features: [
-        "AR camera scanning for nearby locations",
-        "Real-time directory of attractions and cafés",
-        "Live map, location tracking and route calculation",
-        "Detailed place pages with user reviews",
-        "Offline map caching and local POI database",
-      ],
-      stack: ["Flutter", "Dart", "BLoC", "AR / Camera", "Google Maps API", "Geolocator"],
-      images: [
-        "images/opt/SAIR/Screenshot-2026-05-30-at-11.21.49.webp",
-        "images/opt/SAIR/Screenshot-2026-05-30-at-11.21.59.webp",
-        "images/opt/SAIR/Screenshot-2026-05-30-at-11.22.14.webp",
-        "images/opt/SAIR/Screenshot-2026-05-30-at-11.22.21.webp",
-        "images/opt/SAIR/Screenshot-2026-05-30-at-11.21.41.webp",
-      ],
-      links: {
-        appStore: "https://apps.apple.com/us/app/sair/id6763813012",
-      },
-    },
-    {
       id: "avtotest",
       title: "Avtomaktab",
       tagline: "Driving school test system",
