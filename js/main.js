@@ -7,7 +7,7 @@
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 
-  const TYPE_LABELS = { mobile: "Mobile", desktop: "Desktop", web: "Web", backend: "Backend" };
+  const TYPE_LABELS = { fullstack: "Full-stack", mobile: "Mobile", desktop: "Desktop", web: "Web", backend: "Backend" };
   const LINK_META = {
     live: { label: "Live site", icon: "↗" },
     appStore: { label: "App Store", icon: "" },
@@ -165,7 +165,7 @@
       wrap.remove();
       return;
     }
-    wrap.innerHTML = [["all", "All", shipped], ...types.map((t) => [t, TYPE_LABELS[t], counts[t]])]
+    wrap.innerHTML = [["all", "All", data.projects.length], ...types.map((t) => [t, TYPE_LABELS[t], counts[t]])]
       .map(([k, label, n], i) => `<button role="tab" class="chip" data-filter="${k}" aria-selected="${i === 0}">${label}<sup>${n}</sup></button>`)
       .join("");
     wrap.addEventListener("click", (e) => {

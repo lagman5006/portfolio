@@ -3,7 +3,7 @@
  *  PORTFOLIO MA'LUMOTLARI — saytdagi barcha kontent shu yerda.
  *  Yangi loyiha qo'shish: `projects` massiviga yangi obyekt qo'shing.
  *
- *  type:   "mobile" | "web" | "backend"
+ *  type:   "fullstack" | "mobile" | "desktop" | "web" | "backend"
  *  frame:  "phone"  — telefon skrinshotlari (vertikal)
  *          "screen" — sayt / desktop skrinshotlari (gorizontal)
  *          "code"   — rasmsiz backend: kartada endpointlar ko'rinadi
@@ -89,6 +89,81 @@ window.PORTFOLIO = {
         appStore: "https://apps.apple.com/ru/app/yuristai-app/id6780047253",
         playStore: "https://play.google.com/store/apps/details?id=com.yurist.ai",
       },
+    },
+    {
+      id: "tdyu-endowment",
+      title: "TDYU Endowment Fund",
+      tagline: "University endowment website, merch shop & two admin panels",
+      type: "fullstack",
+      frame: "code",
+      year: 2026,
+      summary:
+        "Donation platform and alumni network for Tashkent State University of Law — with an online merch shop, two admin panels and a Node.js API.",
+      description:
+        "A complete platform for the Tashkent State University of Law (TDYU) Endowment Fund. The public website presents the fund's mission, programs and projects, publishes annual reports for transparency, accepts donations and grows the alumni community with an interactive world map. A second site — the fund's merch shop — sells branded products with customer accounts and order tracking. Each site has its own admin panel, and both run on a single Node.js API that I built and deployed to an Nginx server with HTTPS.",
+      features: [
+        "Fund website: mission, programs, projects, governance and alumni stories",
+        "Donation flow with an impact calculator and downloadable annual reports",
+        "Interactive alumni world map (Leaflet) with self-registration",
+        "Merch shop with Google sign-in, customer accounts and order history",
+        "Admin panel: alumni applications (approve / reject), governance, stats",
+        "Shop admin: products, banners, orders and sales analytics · image cropper",
+        "Uzbek, Russian and English · light / dark theme",
+      ],
+      stack: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Leaflet", "Node.js", "REST API", "Nginx"],
+      endpoints: ["GET /api/stats", "POST /api/applications", "GET /api/shop/products", "POST /api/shop/orders"],
+      images: [],
+      links: {},
+    },
+    {
+      id: "azko-zavod",
+      title: "AZKO Zavod",
+      tagline: "Production & accounting system for an oil factory",
+      type: "fullstack",
+      frame: "code",
+      year: 2026,
+      summary:
+        "Backend, web admin panel and mobile app that run an oil factory end-to-end — from raw cottonseed to sales, debts and SMS reminders.",
+      description:
+        "AZKO Zavod is the accounting and management system of a cottonseed oil factory, built as a monorepo with three parts. The Express API on MySQL (Knex) tracks raw-material intake, production batches, warehouse stock, clients, sales and debts, with a scheduled auto-press job and SMS reminders sent through Eskiz. Managers work in a React admin panel, while the Flutter app has two roles: workers record weigh-ins, production and quick sales on the floor, and the director follows analytics, sales history and the debt ledger from their phone.",
+      features: [
+        "Raw cottonseed intake, production batches and scheduled auto-press (cron)",
+        "Warehouse stock with a full transaction history",
+        "Sales with printable PDF receipts and Excel export",
+        "Client debts, payments and automatic SMS reminders (Eskiz)",
+        "React admin panel: dashboard, production, sales, debts, users, SMS logs",
+        "Flutter app with worker and director roles",
+        "JWT auth, Zod validation, CI/CD deploy to azkozavod.uz",
+      ],
+      stack: ["Node.js", "Express", "TypeScript", "Knex", "MySQL", "React", "Tailwind CSS", "Flutter", "JWT"],
+      endpoints: ["POST /api/raw-materials", "POST /api/production/process", "POST /api/sales", "POST /api/debts/:id/send-reminder"],
+      images: [],
+      links: {},
+    },
+    {
+      id: "xayrulla-hamidov-tv",
+      title: "Xayrulla Hamidov TV",
+      tagline: "Football media platform — mobile app, admin panel & API",
+      type: "fullstack",
+      frame: "code",
+      year: 2026,
+      summary:
+        "Football highlights, full matches, podcasts, shorts and live streams for a well-known sports commentator's audience — with push notifications and real-time analytics.",
+      description:
+        "Xayrulla Hamidov TV is the media platform of the well-known Uzbek football commentator and journalist. The Flutter app streams highlights, full matches, podcasts and vertical shorts, plus a live HLS broadcast, with favourites, search and sign-in by email, Google or Apple. Editors manage all content from a React admin panel — uploads go to S3-compatible cloud storage — and send push notifications to every user. The Express API tracks views and likes, and pushes live statistics to the dashboard over WebSockets.",
+      features: [
+        "Highlights, full matches, podcasts and vertical shorts",
+        "Live stream (HLS) with a custom video player",
+        "Email, Google and Apple sign-in with email verification",
+        "Favourites synced with the server, search and push notifications",
+        "Admin panel: content management, users, push campaigns, analytics",
+        "Real-time view analytics over WebSockets",
+        "Video uploads to S3-compatible storage (Cloudflare R2)",
+      ],
+      stack: ["Flutter", "Dart", "Provider", "Node.js", "Express", "TypeScript", "MySQL", "React", "WebSocket", "Firebase Messaging", "S3 / R2"],
+      endpoints: ["GET /api/home", "GET /api/videos/highlights", "POST /api/notifications", "GET /api/analytics"],
+      images: [],
+      links: {},
     },
     {
       id: "zonic",

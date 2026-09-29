@@ -14,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
-  <script src="js/data.js?v=4" defer></script>
-  <script src="js/main.js?v=4" defer></script>
+  <link rel="stylesheet" href="styles.css?v=6">
+  <script src="js/data.js?v=6" defer></script>
+  <script src="js/main.js?v=6" defer></script>
 </head>
 <body>
   <div class="progress" aria-hidden="true"></div>
@@ -35,6 +35,7 @@
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#work">Work</a>
+      <a href="#company">IT Progress</a>
       <a href="#services">Services</a>
       <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
@@ -123,7 +124,7 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow reveal">01 — Selected work</p>
+            <p class="eyebrow reveal">01 — Freelance &amp; personal work</p>
             <h2 class="section-title reveal">Things I've <em class="serif">shipped</em></h2>
           </div>
           <div class="filters reveal" role="tablist" aria-label="Filter projects" data-filters></div>
@@ -132,12 +133,27 @@
       </div>
     </section>
 
+    <!-- ===== Company (IT Progress) ===== -->
+    <section class="section" id="company">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">02 — Where I work</p>
+            <h2 class="section-title reveal">Building at <em class="serif">IT Progress</em></h2>
+          </div>
+          <p class="section-lead reveal">Production apps I develop and maintain as part of the IT Progress team — used every day by schools, businesses and their customers.</p>
+        </div>
+        <div data-company></div>
+        <div class="projects" data-company-projects></div>
+      </div>
+    </section>
+
     <!-- ===== Services ===== -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow reveal">02 — What I do</p>
+            <p class="eyebrow reveal">03 — What I do</p>
             <h2 class="section-title reveal">One developer, <em class="serif">the whole stack</em></h2>
           </div>
           <p class="section-lead reveal">From the screen your users tap to the server and database that answer them — I build every layer, so the pieces fit together.</p>
@@ -150,7 +166,7 @@
     <section class="section" id="journey">
       <div class="container journey-grid">
         <div>
-          <p class="eyebrow reveal">03 — Journey</p>
+          <p class="eyebrow reveal">04 — Journey</p>
           <h2 class="section-title reveal">Always <em class="serif">learning</em>,<br>always shipping</h2>
           <p class="section-lead reveal">Started with Flutter, shipped real apps to real users, then went deeper — into web and backend — to build complete products on my own.</p>
         </div>
@@ -162,7 +178,7 @@
     <section class="section contact" id="contact">
       <div class="container">
         <div class="contact-card reveal">
-          <p class="eyebrow">04 — Contact</p>
+          <p class="eyebrow">05 — Contact</p>
           <h2 class="contact-title">Have an idea?<br>Let's <em class="serif">build it</em> together.</h2>
           <p class="section-lead">Mobile app, website or backend — tell me about it and I'll get back to you within a day.</p>
 

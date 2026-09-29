@@ -415,6 +415,18 @@ kbd {
 }
 .badge-live { color: var(--live); border-color: rgb(74 222 128 / 0.3); background: rgb(74 222 128 / 0.08); }
 .badge-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge-company { color: var(--accent-2); border-color: rgb(34 211 238 / 0.3); background: rgb(34 211 238 / 0.08); }
+
+/* IT Progress — kompaniya bo'limi */
+.company-strip {
+  display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap;
+  margin-bottom: 24px; padding: 16px 22px; border-radius: 16px;
+  border: 1px solid var(--border); background: var(--surface); transition: border-color 0.2s;
+}
+.company-strip:hover { border-color: var(--border-2); }
+.company-name { font-weight: 600; font-size: 1.05rem; }
+.company-strip .mono { margin-left: auto; font-size: 0.8rem; }
+@media (max-width: 600px) { .company-strip .mono { margin-left: 0; } }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tags li {
@@ -443,6 +455,16 @@ kbd {
 .card--wide .phone--2 { transform: translateX(80%) rotate(7deg) translateY(5%) scale(0.92); }
 .card--wide:hover .phone--1 { transform: translateX(-96%) rotate(-10deg) translateY(1%) scale(0.92); }
 .card--wide:hover .phone--2 { transform: translateX(96%) rotate(10deg) translateY(1%) scale(0.92); }
+
+/* Media: rasm hali yo'q */
+.media-soon { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+.media-soon-mark {
+  width: 84px; height: 84px; border-radius: 24px; display: grid; place-items: center;
+  font-size: 2.4rem; font-weight: 600; color: var(--text);
+  border: 1px solid var(--border-2); background: rgb(14 16 24 / 0.7);
+  box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.9);
+}
+.media-soon .mono { font-size: 0.74rem; }
 
 /* Media: browser */
 .media-browser {
