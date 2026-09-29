@@ -335,7 +335,7 @@
     $("[data-pd-links]").innerHTML = links
       .map(([k, url]) => {
         const m = LINK_META[k] || { label: k, icon: "↗" };
-        return `<a class="btn btn-small ${k === "live" || k === "appStore" ? "btn-light" : "btn-ghost"}" href="${esc(url)}" target="_blank" rel="noopener"><span class="link-icon">${m.icon}</span>${m.label}</a>`;
+        return `<a class="btn btn-small btn-ghost btn-store" href="${esc(url)}" target="_blank" rel="noopener"><span class="link-icon">${m.icon}</span>${m.label}</a>`;
       })
       .join("");
 
