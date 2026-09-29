@@ -1,990 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahmatullo Ergashev - Flutter Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rahmatullo Ergashev — Full-Stack Developer</title>
+  <meta name="description" content="Rahmatullo Ergashev — full-stack developer from Fergana, Uzbekistan. Mobile apps, web apps and backends built end-to-end.">
+  <meta name="theme-color" content="#07080c">
+  <meta property="og:title" content="Rahmatullo Ergashev — Full-Stack Developer">
+  <meta property="og:description" content="Mobile, web and backend — products built end-to-end.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/opt/yuristai/yuristai-1.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307080c'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23c4b5fd'%3ERE%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-     <div class="bg-gradient"></div>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <div class="bg-noise"></div>
+  </div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">RE</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+  <!-- ===== Navigation ===== -->
+  <header class="nav">
+    <a href="#home" class="nav-logo" aria-label="Home">
+      <span class="nav-logo-mark">RE</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <div class="nav-actions">
+      <button class="kbd-btn" type="button" data-open-cmdk aria-label="Open command menu">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="kbd-btn-label">Search</span>
+        <kbd data-mod-key>⌘K</kbd>
+      </button>
+      <a href="#contact" class="btn btn-small btn-light">Hire me</a>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
+  <main>
+    <!-- ===== Hero ===== -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge">Fargana, Uzbekistan • Open to Work</span>
-                <h1>Rahmatullo<br><span>Ergashev</span></h1>
-                <p class="hero-subtitle">Flutter Developer with 1+ year of experience building cross-platform mobile apps. Currently participating in a StartUp project at Najot ta'lim, while mastering design patterns and clean architecture.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    <a href="cv.html" target="_blank" class="btn btn-secondary" style="border-color: var(--accent-green); color: var(--accent-green);">📄 View / Print CV</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="flutter-logo">
-                    <svg viewBox="0 0 256 317" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-                        <defs>
-                            <linearGradient id="flutterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#6366f1"/>
-                                <stop offset="100%" stop-color="#22d3ee"/>
-                            </linearGradient>
-                        </defs>
-                        <path d="M157.666 0.001L0 157.667l48.8 48.8L255.267 0z" fill="url(#flutterGrad)"/>
-                        <path d="M156.567 145.396L72.15 229.815l48.8 48.8 132.216-132.216z" fill="#4f46e5"/>
-                        <path d="M121.133 279.531l48.8-48.8 48.8 48.8-48.8 48.801z" fill="#22d3ee" opacity="0.8"/>
-                    </svg>
-                </div>
-            </div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a href="#contact" class="status-pill reveal">
+            <span class="status-dot"></span>
+            Available for new projects
+            <span class="status-sep">·</span>
+            <span class="muted">Fergana, UZ</span>
+          </a>
+
+          <h1 class="hero-title reveal">
+            <span class="line">Full-stack developer</span>
+            <span class="line">building <em class="serif">products</em></span>
+            <span class="line">from <span class="rotator" aria-live="polite"><span class="rotator-word" data-rotator>idea to launch</span></span></span>
+          </h1>
+
+          <p class="hero-sub reveal">
+            I'm <strong>Rahmatullo Ergashev</strong> — I design and ship mobile apps, web apps and the APIs behind them.
+            <span data-count-shipped>7</span> apps built, several live on the App Store &amp; Google Play.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a href="#work" class="btn btn-primary">
+              View my work
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+            <a href="cv.html" class="btn btn-ghost">Resume / CV</a>
+          </div>
+
+          <ul class="hero-socials reveal" aria-label="Social links">
+            <li><a href="https://github.com/lagman5006" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/rahmatulloh-ergashev/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg></a></li>
+            <li><a href="https://t.me/lagman5006" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9.8 15.3 9.4 20c.6 0 .8-.2 1.1-.5l2.6-2.5 5.4 4c1 .6 1.7.3 2-.9l3.5-16.6c.3-1.5-.5-2-1.5-1.7L1.6 9.9C.1 10.5.1 11.3 1.3 11.7l5.3 1.6L18.9 5.6c.6-.4 1.1-.2.7.2"/></svg></a></li>
+            <li><a href="mailto:asliddin5006@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg></a></li>
+          </ul>
         </div>
+
+        <!-- Code window -->
+        <div class="hero-visual reveal" data-tilt>
+          <div class="window">
+            <div class="window-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="window-title">developer.ts</span>
+            </div>
+            <pre class="code" data-code aria-label="Developer profile as code"></pre>
+          </div>
+          <div class="float-card float-card--a">
+            <span class="float-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.4 12.6c0-2.7 2.2-4 2.3-4a5 5 0 0 0-3.9-2.1c-1.7-.2-3.2 1-4.1 1-.8 0-2.1-1-3.5-.9-1.8 0-3.5 1-4.4 2.7-1.9 3.3-.5 8.2 1.3 10.9.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.7a11 11 0 0 0 1.5-3.1 4.7 4.7 0 0 1-2.9-4.5ZM13.8 4.5A4.6 4.6 0 0 0 14.9 1a4.7 4.7 0 0 0-3.1 1.6 4.4 4.4 0 0 0-1.1 3.3 3.9 3.9 0 0 0 3.1-1.4Z"/></svg>
+            </span>
+            <div><strong data-count-stores>5</strong> apps live<br><span class="muted">App Store &amp; Google Play</span></div>
+          </div>
+          <div class="float-card float-card--b">
+            <span class="float-pulse"></span>
+            <div><span class="mono">200 OK</span><br><span class="muted">GET /api/projects</span></div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
-    <!-- Stats -->
-    <section class="container">
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">1+ Year</div>
-                <div class="stat-label">Experience</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Commitment</div>
-            </div>
-        </div>
+    <!-- ===== Marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" data-marquee></div>
+    </div>
+
+    <!-- ===== Stats ===== -->
+    <section class="container stats">
+      <div class="stat reveal"><span class="stat-num" data-countup data-count-shipped>7</span><span class="stat-label">Products built</span></div>
+      <div class="stat reveal"><span class="stat-num" data-countup data-count-stores>5</span><span class="stat-label">Live in app stores</span></div>
+      <div class="stat reveal"><span class="stat-num"><span data-countup>3</span></span><span class="stat-label">Layers: mobile · web · backend</span></div>
+      <div class="stat reveal"><span class="stat-num"><span data-countup>2</span>+</span><span class="stat-label">Years of experience</span></div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Mobile applications built with Flutter, showcasing modern UI/UX design and robust functionality</p>
-            </div>
-            <div class="projects-grid">
-                <!-- StyleUp Project -->
-                <div class="project-card" onclick="openModal('styleup')">
-                    <div class="project-image">
-                        <img id="styleup-thumb" src="images/StyleUp1.png" alt="StyleUp">
-                        <div class="project-overlay">
-                            <span class="view-project">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">StyleUp (BarBros)</h3>
-                        <p class="project-desc">Search barbershops and order services, view available tables and recognize different services. Team project at Najot ta'lim StartUp program.</p>
-                        <div class="project-tags">
-                            <span class="tag orange">Flutter</span>
-                            <span class="tag">BLoC</span>
-                            <span class="tag green">Clean Architecture</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Nasiya Project -->
-                <div class="project-card" onclick="openModal('nasiya')">
-                    <div class="project-image">
-                        <img id="nasiya-thumb" src="images/nasiyaapp1.png" alt="Nasiya App">
-                        <div class="project-overlay">
-                            <span class="view-project">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Nasiya App</h3>
-                        <p class="project-desc">Installment payment management system for small businesses with SMS notifications, client tracking, and detailed financial reports.</p>
-                        <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag cyan">BLoC</span>
-                            <span class="tag green">Multi-language</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Avtomaktab Project -->
-                <div class="project-card" onclick="openModal('avtotest')">
-                    <div class="project-image">
-                        <img id="avtotest-thumb" src="images/avtotest1.png" alt="Avtomaktab">
-                        <div class="project-overlay">
-                            <span class="view-project">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Avtomaktab</h3>
-                        <p class="project-desc">Driving school test preparation app with 1000+ questions, practice exams, progress tracking, and multi-language support.</p>
-                        <div class="project-tags">
-                            <span class="tag cyan">Flutter</span>
-                            <span class="tag orange">Provider</span>
-                            <span class="tag">1000+ Questions</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- myMock Project -->
-                <div class="project-card" onclick="openModal('mymock')">
-                    <div class="project-image">
-                        <img id="mymock-thumb" src="images/myMock/Screenshot_20260530_111151.png" alt="myMock">
-                        <div class="project-overlay">
-                            <span class="view-project">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">myMock</h3>
-                        <p class="project-desc">Interactive educational platform for students featuring mock tests, video lessons, and structured courses with progress tracking.</p>
-                        <div class="project-tags">
-                            <span class="tag orange">Flutter</span>
-                            <span class="tag">Provider</span>
-                            <span class="tag green">REST API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SAIR Project -->
-                <div class="project-card" onclick="openModal('sair')">
-                    <div class="project-image">
-                        <img id="sair-thumb" src="images/SAIR/Screenshot 2026-05-30 at 11.21.41.png" alt="SAIR">
-                        <div class="project-overlay">
-                            <span class="view-project">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">SAIR</h3>
-                        <p class="project-desc">Immersive travel assistant helping tourists and locals discover nearby points of interest using location-aware camera detection.</p>
-                        <div class="project-tags">
-                            <span class="tag cyan">Flutter</span>
-                            <span class="tag">BLoC</span>
-                            <span class="tag orange">AR / Camera</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Zonic Project -->
-                <div class="project-card" onclick="openModal('zonic')">
-                    <div class="project-image">
-                        <img id="zonic-thumb" src="images/zonic/Screenshot_20260530_105708.png" alt="Zonic App">
-                        <div class="project-overlay">
-                            <span class="view-project">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Zonic App</h3>
-                        <p class="project-desc">A premium health and fitness companion designed to track steps, workouts, and sleep with beautiful data visualizations.</p>
-                        <div class="project-tags">
-                            <span class="tag cyan">Flutter</span>
-                            <span class="tag">BLoC</span>
-                            <span class="tag green">Hive (NoSQL)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yurist AI Project -->
-                <div class="project-card" onclick="openModal('yuristai')">
-                    <div class="project-image">
-                        <img id="yuristai-thumb" src="images/yuristai/yuristai-1.png" alt="Yurist AI">
-                        <div class="project-overlay">
-                            <span class="view-project">View Project →</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Yurist AI</h3>
-                        <p class="project-desc">AI-powered legal assistant and directory for Uzbekistan, providing instant legal advice, automated document drafting, and Lex.uz database integration.</p>
-                        <div class="project-tags">
-                            <span class="tag cyan">Flutter</span>
-                            <span class="tag">BLoC</span>
-                            <span class="tag green">AI Integration</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ===== Work ===== -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">01 — Selected work</p>
+            <h2 class="section-title reveal">Things I've <em class="serif">shipped</em></h2>
+          </div>
+          <div class="filters reveal" role="tablist" aria-label="Filter projects" data-filters></div>
         </div>
+        <div class="projects" data-projects></div>
+      </div>
     </section>
 
-    
-    <!-- Education Section -->
-    <section id="education" style="padding-top: 3rem;">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Background</span>
-                <h2 class="section-title">Education</h2>
-                <p class="section-subtitle">My learning journey in software development</p>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="contact-item" style="margin-bottom: 1.5rem;">
-                    <div class="contact-icon" style="background: linear-gradient(135deg, var(--accent-green), #059669);">🎓</div>
-                    <div class="contact-details">
-                        <h3 style="font-size: 1.2rem;">Najot Ta'lim - Flutter Bootcamp</h3>
-                        <p style="color: var(--gray); margin-top: 0.3rem;">Intensive Flutter development program • Graduated 2025</p>
-                    </div>
-                </div>
-                <div class="contact-item" style="margin-bottom: 1.5rem;">
-                    <div class="contact-icon" style="background: linear-gradient(135deg, var(--accent), #0891b2);">📚</div>
-                    <div class="contact-details">
-                        <h3 style="font-size: 1.2rem;">Najot Ta'lim - Foundation Course</h3>
-                        <p style="color: var(--gray); margin-top: 0.3rem;">Programming fundamentals • Graduated 2025</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon" style="background: linear-gradient(135deg, var(--accent-orange), #ea580c);">🚀</div>
-                    <div class="contact-details">
-                        <h3 style="font-size: 1.2rem;">Currently Learning</h3>
-                        <p style="color: var(--gray); margin-top: 0.3rem;">Design Patterns • Flutter Apprentice Book • StartUp Project at Najot Ta'lim</p>
-                    </div>
-                </div>
-            </div>
+    <!-- ===== Services ===== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">02 — What I do</p>
+            <h2 class="section-title reveal">One developer, <em class="serif">the whole stack</em></h2>
+          </div>
+          <p class="section-lead reveal">From the screen your users tap to the server and database that answer them — I build every layer, so the pieces fit together.</p>
         </div>
+        <div class="services" data-services></div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Expertise</span>
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">Specialized in Flutter development with a strong foundation in mobile app architecture</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Flutter & Dart</span>
-                        <span class="skill-level">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">State Management (BLoC, Provider)</span>
-                        <span class="skill-level">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Clean Architecture & MVVM</span>
-                        <span class="skill-level">65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 65%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">REST API & Dio</span>
-                        <span class="skill-level">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Firebase Integration</span>
-                        <span class="skill-level">60%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 60%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Git & GitHub</span>
-                        <span class="skill-level">65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 65%"></div>
-                    </div>
-                </div>
-            </div>
+    <!-- ===== Journey ===== -->
+    <section class="section" id="journey">
+      <div class="container journey-grid">
+        <div>
+          <p class="eyebrow reveal">03 — Journey</p>
+          <h2 class="section-title reveal">Always <em class="serif">learning</em>,<br>always shipping</h2>
+          <p class="section-lead reveal">Started with Flutter, shipped real apps to real users, then went deeper — into web and backend — to build complete products on my own.</p>
         </div>
+        <ol class="timeline" data-journey></ol>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Get In Touch</span>
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="section-subtitle">Have a project in mind? Let's discuss how I can help bring your ideas to life</p>
+    <!-- ===== Contact ===== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <p class="eyebrow">04 — Contact</p>
+          <h2 class="contact-title">Have an idea?<br>Let's <em class="serif">build it</em> together.</h2>
+          <p class="section-lead">Mobile app, website or backend — tell me about it and I'll get back to you within a day.</p>
+
+          <div class="contact-grid">
+            <form class="contact-form" data-contact-form>
+              <div class="field">
+                <input id="f-name" name="name" type="text" placeholder=" " required autocomplete="name">
+                <label for="f-name">Your name</label>
+              </div>
+              <div class="field">
+                <input id="f-email" name="email" type="email" placeholder=" " required autocomplete="email">
+                <label for="f-email">Email</label>
+              </div>
+              <div class="field">
+                <textarea id="f-msg" name="message" rows="4" placeholder=" " required></textarea>
+                <label for="f-msg">Tell me about your project</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Send message
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+
+            <div class="contact-links">
+              <button class="contact-link" type="button" data-copy-email>
+                <span class="contact-link-label">Email</span>
+                <span class="contact-link-value">asliddin5006@gmail.com</span>
+                <span class="contact-link-action" data-copy-label>Copy</span>
+              </button>
+              <a class="contact-link" href="https://t.me/lagman5006" target="_blank" rel="noopener">
+                <span class="contact-link-label">Telegram</span>
+                <span class="contact-link-value">@lagman5006</span>
+                <span class="contact-link-action">↗</span>
+              </a>
+              <a class="contact-link" href="tel:+998990375006">
+                <span class="contact-link-label">Phone</span>
+                <span class="contact-link-value">+998 99 037 5006</span>
+                <span class="contact-link-action">↗</span>
+              </a>
+              <a class="contact-link" href="https://www.linkedin.com/in/rahmatulloh-ergashev/" target="_blank" rel="noopener">
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-value">rahmatulloh-ergashev</span>
+                <span class="contact-link-action">↗</span>
+              </a>
+              <a class="contact-link" href="https://github.com/lagman5006" target="_blank" rel="noopener">
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-value">lagman5006</span>
+                <span class="contact-link-action">↗</span>
+              </a>
             </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="asliddin5006@gmail.com"><span class="__cf_email__" data-cfemail="b4d5c7d8ddd0d0ddda81848482f4d3d9d5ddd89ad7dbd9">asliddin5006@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <a href="tel:+998990375006">+998 99 037 5006</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💬</div>
-                        <div class="contact-details">
-                            <h3>Telegram</h3>
-                            <a href="https://t.me/lagman5006" target="_blank">@lagman5006</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/rahmatulloh-ergashev/" target="_blank">Connect with me</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🐙</div>
-                        <div class="contact-details">
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/lagman5006" target="_blank">github.com/lagman5006</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="your.email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Message</label>
-                            <textarea placeholder="Tell me about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Rahmatullo Ergashev. Built with passion for Flutter development.</p>
-    </footer>
-
-    <!-- StyleUp Modal -->
-    <div id="styleup-modal" class="modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div>
-                    <h2 class="modal-title">StyleUp (BarBros)</h2>
-                    <p class="modal-subtitle">Barbershop Booking Platform</p>
-                </div>
-                <button class="modal-close" onclick="closeModal('styleup')">×</button>
-            </div>
-            <div class="modal-content">
-                <div>
-                    <div class="gallery-main">
-                        <img id="styleup-main-img" src="" alt="StyleUp Screenshot">
-                        <button class="gallery-nav gallery-prev" onclick="changeImage('styleup', -1)">‹</button>
-                        <button class="gallery-nav gallery-next" onclick="changeImage('styleup', 1)">›</button>
-                        <div class="gallery-counter">
-                            <span id="styleup-counter">1</span> / <span id="styleup-total">5</span>
-                        </div>
-                    </div>
-                    <div class="gallery-thumbnails" id="styleup-thumbs"></div>
-                </div>
-                <div class="project-details">
-                    <div class="detail-section">
-                        <h4>📱 About the Project</h4>
-                        <p>StyleUp is a comprehensive barbershop booking platform designed to connect users with nearby barbershops and styling services. The app helps barbershops manage their barbers and enables barbers to showcase their work and attract more clients.</p>
-                    </div>
-                    <div class="detail-section">
-                        <h4>✨ Key Features</h4>
-                        <ul class="feature-list">
-                            <li>Browse nearby barbershops and services</li>
-                            <li>View barber profiles and portfolios</li>
-                            <li>Book appointments with preferred barbers</li>
-                            <li>Dark/Light theme support</li>
-                            <li>Order history and management</li>
-                            <li>Real-time chat with barbershops</li>
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🛠 Tech Stack</h4>
-                        <div class="tech-stack">
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Dart</span>
-                            <span class="tech-item">BLoC</span>
-                            <span class="tech-item">Clean Architecture</span>
-                            <span class="tech-item">Dependency Injection</span>
-                            <span class="tech-item">REST API</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span data-year>2026</span> Rahmatullo Ergashev</span>
+      <span class="muted">Hand-built with HTML, CSS &amp; JavaScript · Press <kbd data-mod-key>⌘K</kbd> to navigate</span>
+      <a href="#home" class="muted">Back to top ↑</a>
     </div>
+  </footer>
 
-    <!-- Nasiya Modal -->
-    <div id="nasiya-modal" class="modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div>
-                    <h2 class="modal-title">Nasiya App</h2>
-                    <p class="modal-subtitle">Installment Payment Management</p>
-                </div>
-                <button class="modal-close" onclick="closeModal('nasiya')">×</button>
-            </div>
-            <div class="modal-content">
-                <div>
-                    <div class="gallery-main">
-                        <img id="nasiya-main-img" src="" alt="Nasiya Screenshot">
-                        <button class="gallery-nav gallery-prev" onclick="changeImage('nasiya', -1)">‹</button>
-                        <button class="gallery-nav gallery-next" onclick="changeImage('nasiya', 1)">›</button>
-                        <div class="gallery-counter">
-                            <span id="nasiya-counter">1</span> / <span id="nasiya-total">6</span>
-                        </div>
-                    </div>
-                    <div class="gallery-thumbnails" id="nasiya-thumbs"></div>
-                </div>
-                <div class="project-details">
-                    <div class="detail-section">
-                        <h4>📱 About the Project</h4>
-                        <p>Nasiya App is a powerful installment payment management system designed for small business owners. It helps track customer debts, manage payments, and send automated SMS reminders to clients about upcoming payments.</p>
-                    </div>
-                    <div class="detail-section">
-                        <h4>✨ Key Features</h4>
-                        <ul class="feature-list">
-                            <li>Dashboard with total debt overview</li>
-                            <li>Client management system</li>
-                            <li>Automated SMS payment reminders</li>
-                            <li>Payment tracking and history</li>
-                            <li>Multi-language support (UZ, RU, EN)</li>
-                            <li>Detailed financial reports</li>
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🛠 Tech Stack</h4>
-                        <div class="tech-stack">
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Dart</span>
-                            <span class="tech-item">BLoC</span>
-                            <span class="tech-item">Clean Architecture</span>
-                            <span class="tech-item">SMS Integration</span>
-                            <span class="tech-item">Local Storage</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ===== Project dialog ===== -->
+  <dialog class="project-dialog" data-project-dialog aria-labelledby="pd-title">
+    <div class="pd">
+      <button class="pd-close" type="button" data-close-dialog aria-label="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="pd-media">
+        <div class="pd-track" data-pd-track></div>
+        <button class="pd-nav pd-nav--prev" type="button" data-pd-prev aria-label="Previous image">‹</button>
+        <button class="pd-nav pd-nav--next" type="button" data-pd-next aria-label="Next image">›</button>
+        <div class="pd-dots" data-pd-dots></div>
+      </div>
+      <div class="pd-body">
+        <p class="pd-meta" data-pd-meta></p>
+        <h3 class="pd-title" id="pd-title" data-pd-title tabindex="-1" autofocus></h3>
+        <p class="pd-tagline" data-pd-tagline></p>
+        <div class="pd-links" data-pd-links></div>
+        <p class="pd-desc" data-pd-desc></p>
+        <h4 class="pd-h">Key features</h4>
+        <ul class="pd-features" data-pd-features></ul>
+        <div data-pd-endpoints-wrap hidden>
+          <h4 class="pd-h">API endpoints</h4>
+          <ul class="pd-endpoints" data-pd-endpoints></ul>
         </div>
+        <h4 class="pd-h">Tech stack</h4>
+        <ul class="tags" data-pd-stack></ul>
+      </div>
     </div>
+  </dialog>
 
-    <!-- Avtotest Modal -->
-    <div id="avtotest-modal" class="modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div>
-                    <h2 class="modal-title">Avtomaktab</h2>
-                    <p class="modal-subtitle">Driving School Test System</p>
-                </div>
-                <button class="modal-close" onclick="closeModal('avtotest')">×</button>
-            </div>
-            <div class="modal-content">
-                <div>
-                    <div class="gallery-main">
-                        <img id="avtotest-main-img" src="" alt="Avtomaktab Screenshot">
-                        <button class="gallery-nav gallery-prev" onclick="changeImage('avtotest', -1)">‹</button>
-                        <button class="gallery-nav gallery-next" onclick="changeImage('avtotest', 1)">›</button>
-                        <div class="gallery-counter">
-                            <span id="avtotest-counter">1</span> / <span id="avtotest-total">5</span>
-                        </div>
-                    </div>
-                    <div class="gallery-thumbnails" id="avtotest-thumbs"></div>
-                </div>
-                <div class="project-details">
-                    <div class="detail-section">
-                        <h4>📱 About the Project</h4>
-                        <p>Avtomaktab is a comprehensive driving school test preparation application designed to help users prepare for their driving license exam. It features over 1000 questions organized by categories and topics.</p>
-                    </div>
-                    <div class="detail-section">
-                        <h4>✨ Key Features</h4>
-                        <ul class="feature-list">
-                            <li>1000+ practice questions</li>
-                            <li>Questions organized by categories</li>
-                            <li>Timed practice exams</li>
-                            <li>Progress tracking and statistics</li>
-                            <li>Multi-language (Uzbek Latin, Cyrillic, Russian)</li>
-                            <li>Offline support with JSON data</li>
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🛠 Tech Stack</h4>
-                        <div class="tech-stack">
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Dart</span>
-                            <span class="tech-item">Provider</span>
-                            <span class="tech-item">JSON Data</span>
-                            <span class="tech-item">SharedPreferences</span>
-                            <span class="tech-item">Responsive UI</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ===== Command palette ===== -->
+  <dialog class="cmdk" data-cmdk aria-label="Command menu">
+    <div class="cmdk-inner">
+      <div class="cmdk-search">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="text" placeholder="Search projects, sections, links…" data-cmdk-input aria-label="Search" autocomplete="off" spellcheck="false">
+        <kbd>esc</kbd>
+      </div>
+      <ul class="cmdk-list" data-cmdk-list role="listbox"></ul>
     </div>
+  </dialog>
 
-    <!-- myMock Modal -->
-    <div id="mymock-modal" class="modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div>
-                    <h2 class="modal-title">myMock</h2>
-                    <p class="modal-subtitle">Interactive Educational Platform</p>
-                </div>
-                <button class="modal-close" onclick="closeModal('mymock')">×</button>
-            </div>
-            <div class="modal-content">
-                <div>
-                    <div class="gallery-main">
-                        <img id="mymock-main-img" src="" alt="myMock Screenshot">
-                        <button class="gallery-nav gallery-prev" onclick="changeImage('mymock', -1)">‹</button>
-                        <button class="gallery-nav gallery-next" onclick="changeImage('mymock', 1)">›</button>
-                        <div class="gallery-counter">
-                            <span id="mymock-counter">1</span> / <span id="mymock-total">5</span>
-                        </div>
-                    </div>
-                    <div class="gallery-thumbnails" id="mymock-thumbs"></div>
-                </div>
-                <div class="project-details">
-                    <div class="detail-section">
-                        <h4>📱 About the Project</h4>
-                        <p>myMock is an interactive educational platform designed for students. It empowers them to prepare for examinations through comprehensive online mock tests, interactive video lessons, and structured multi-module courses while receiving academic support.</p>
-                    </div>
-                    <div class="detail-section">
-                        <h4>✨ Key Features</h4>
-                        <ul class="feature-list">
-                            <li>Comprehensive mock tests & results tracking</li>
-                            <li>Interactive video lessons with modular structure</li>
-                            <li>Browse teacher profiles & academic courses</li>
-                            <li>Secure authentication via Phone and Google account</li>
-                            <li>Live chat support with teachers and administrators</li>
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🛠 Tech Stack</h4>
-                        <div class="tech-stack">
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Dart</span>
-                            <span class="tech-item">Provider</span>
-                            <span class="tech-item">REST API & Dio</span>
-                            <span class="tech-item">Firebase Auth</span>
-                            <span class="tech-item">State Management</span>
-                        </div>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🔗 Store Links</h4>
-                        <div class="store-buttons">
-                            <a href="https://apps.apple.com/us/app/mymock/id6760037918" target="_blank" class="btn-appstore">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.56C4.26,17.1 2.97,12.56 4.72,9.53C5.59,8.03 7.14,7.08 8.82,7.05C10.1,7.03 11.3,7.9 12.08,7.9C12.86,7.9 14.3,6.85 15.84,7C16.5,7.03 18.33,7.27 19.53,9C19.43,9.07 17.2,10.36 17.22,13C17.25,16.08 19.92,17.1 20,17.14C19.97,17.24 19.56,18.64 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C15.85,1.04 14.51,1.73 13.73,2.64C13.07,3.41 12.49,4.52 12.64,5.78C13.87,5.87 15.12,5.17 15.97,4.17Z"/>
-                                </svg>
-                                Download on the App Store
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=uz.mymock.app" target="_blank" class="btn-playstore">
-                                <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
-                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
-                                </svg>
-                                Get it on Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SAIR Modal -->
-    <div id="sair-modal" class="modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div>
-                    <h2 class="modal-title">SAIR</h2>
-                    <p class="modal-subtitle">Travel & Location Discovery Assistant</p>
-                </div>
-                <button class="modal-close" onclick="closeModal('sair')">×</button>
-            </div>
-            <div class="modal-content">
-                <div>
-                    <div class="gallery-main">
-                        <img id="sair-main-img" src="" alt="SAIR Screenshot">
-                        <button class="gallery-nav gallery-prev" onclick="changeImage('sair', -1)">‹</button>
-                        <button class="gallery-nav gallery-next" onclick="changeImage('sair', 1)">›</button>
-                        <div class="gallery-counter">
-                            <span id="sair-counter">1</span> / <span id="sair-total">5</span>
-                        </div>
-                    </div>
-                    <div class="gallery-thumbnails" id="sair-thumbs"></div>
-                </div>
-                <div class="project-details">
-                    <div class="detail-section">
-                        <h4>📱 About the Project</h4>
-                        <p>SAIR is a location-aware travel companion designed to help tourists and locals discover historical landmarks, attractions, restaurants, and shops. It uses advanced mapping and camera technologies to present real-time point-of-interest details.</p>
-                    </div>
-                    <div class="detail-section">
-                        <h4>✨ Key Features</h4>
-                        <ul class="feature-list">
-                            <li>Augmented Reality (AR) camera scanning for locations</li>
-                            <li>Real-time nearby attraction and cafe directory</li>
-                            <li>Location tracking, live map views, and route calculation</li>
-                            <li>Detailed attraction overview pages with user reviews</li>
-                            <li>Offline map caching & localized point-of-interest database</li>
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🛠 Tech Stack</h4>
-                        <div class="tech-stack">
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Dart</span>
-                            <span class="tech-item">BLoC</span>
-                            <span class="tech-item">AR View / Custom Camera</span>
-                            <span class="tech-item">Google Maps API</span>
-                            <span class="tech-item">Geolocator & Compass</span>
-                        </div>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🔗 Store Links</h4>
-                        <a href="https://apps.apple.com/us/app/sair/id6763813012" target="_blank" class="btn-appstore">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.56C4.26,17.1 2.97,12.56 4.72,9.53C5.59,8.03 7.14,7.08 8.82,7.05C10.1,7.03 11.3,7.9 12.08,7.9C12.86,7.9 14.3,6.85 15.84,7C16.5,7.03 18.33,7.27 19.53,9C19.43,9.07 17.2,10.36 17.22,13C17.25,16.08 19.92,17.1 20,17.14C19.97,17.24 19.56,18.64 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C15.85,1.04 14.51,1.73 13.73,2.64C13.07,3.41 12.49,4.52 12.64,5.78C13.87,5.87 15.12,5.17 15.97,4.17Z"/>
-                            </svg>
-                            Download on the App Store
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Zonic Modal -->
-    <div id="zonic-modal" class="modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div>
-                    <h2 class="modal-title">Zonic App</h2>
-                    <p class="modal-subtitle">Health & Fitness Companion</p>
-                </div>
-                <button class="modal-close" onclick="closeModal('zonic')">×</button>
-            </div>
-            <div class="modal-content">
-                <div>
-                    <div class="gallery-main">
-                        <img id="zonic-main-img" src="" alt="Zonic Screenshot">
-                        <button class="gallery-nav gallery-prev" onclick="changeImage('zonic', -1)">‹</button>
-                        <button class="gallery-nav gallery-next" onclick="changeImage('zonic', 1)">›</button>
-                        <div class="gallery-counter">
-                            <span id="zonic-counter">1</span> / <span id="zonic-total">4</span>
-                        </div>
-                    </div>
-                    <div class="gallery-thumbnails" id="zonic-thumbs"></div>
-                </div>
-                <div class="project-details">
-                    <div class="detail-section">
-                        <h4>📱 About the Project</h4>
-                        <p>Zonic is an elegant health and fitness tracker that empowers users to monitor their physical activity, workouts, sleep, and overall wellness. The application utilizes local caching to guarantee flawless offline operation and renders beautiful data visualization graphs.</p>
-                    </div>
-                    <div class="detail-section">
-                        <h4>✨ Key Features</h4>
-                        <ul class="feature-list">
-                            <li>Daily physical activity, step counts, & workout log</li>
-                            <li>Personal health goal setting & interactive progress indicators</li>
-                            <li>Premium dark mode dashboard with customized UI designs</li>
-                            <li>Sleek charts & graphical statistics of weekly/monthly progress</li>
-                            <li>NoSQL local caching for complete offline functionality</li>
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🛠 Tech Stack</h4>
-                        <div class="tech-stack">
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Dart</span>
-                            <span class="tech-item">BLoC</span>
-                            <span class="tech-item">Hive (NoSQL Database)</span>
-                            <span class="tech-item">Custom Painters & Graphs</span>
-                            <span class="tech-item">Sensors / Health Integration</span>
-                        </div>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🔗 Store Links</h4>
-                        <a href="https://apps.apple.com/us/app/zonic-app/id6766318781" target="_blank" class="btn-appstore">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.56C4.26,17.1 2.97,12.56 4.72,9.53C5.59,8.03 7.14,7.08 8.82,7.05C10.1,7.03 11.3,7.9 12.08,7.9C12.86,7.9 14.3,6.85 15.84,7C16.5,7.03 18.33,7.27 19.53,9C19.43,9.07 17.2,10.36 17.22,13C17.25,16.08 19.92,17.1 20,17.14C19.97,17.24 19.56,18.64 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C15.85,1.04 14.51,1.73 13.73,2.64C13.07,3.41 12.49,4.52 12.64,5.78C13.87,5.87 15.12,5.17 15.97,4.17Z"/>
-                            </svg>
-                            Download on the App Store
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Yurist AI Modal -->
-    <div id="yuristai-modal" class="modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div>
-                    <h2 class="modal-title">Yurist AI</h2>
-                    <p class="modal-subtitle">AI-Powered Legal Assistant & Specialist Directory</p>
-                </div>
-                <button class="modal-close" onclick="closeModal('yuristai')">×</button>
-            </div>
-            <div class="modal-content">
-                <div>
-                    <div class="gallery-main">
-                        <img id="yuristai-main-img" src="" alt="Yurist AI Screenshot">
-                        <button class="gallery-nav gallery-prev" onclick="changeImage('yuristai', -1)">‹</button>
-                        <button class="gallery-nav gallery-next" onclick="changeImage('yuristai', 1)">›</button>
-                        <div class="gallery-counter">
-                            <span id="yuristai-counter">1</span> / <span id="yuristai-total">5</span>
-                        </div>
-                    </div>
-                    <div class="gallery-thumbnails" id="yuristai-thumbs"></div>
-                </div>
-                <div class="project-details">
-                    <div class="detail-section">
-                        <h4>📱 About the Project</h4>
-                        <p>Yurist AI is a smart legal assistant designed specifically for the legislation of the Republic of Uzbekistan. Powered by artificial intelligence, the app helps users get immediate, high-accuracy legal advice, draft documents like applications and complaints, search the official Lex.uz legislative database, and connect directly with verified legal specialists across multiple categories (Notaries, Advocates, Family, Labor, Business, Property, Tax, and Administrative law).</p>
-                    </div>
-                    <div class="detail-section">
-                        <h4>✨ Key Features</h4>
-                        <ul class="feature-list">
-                            <li>Instant AI-powered legal consultations based on Uzbekistan legislation</li>
-                            <li>Automated generation of legal applications and complaints ("Ariza va shikoyatlar")</li>
-                            <li>Integrated legislation search querying the official Lex.uz database</li>
-                            <li>Legal specialists directory categorized by field of law for direct consultations</li>
-                            <li>Beautiful fluid Light/Dark theme support with responsive components</li>
-                            <li>Verified security and complete data privacy for sensitive legal data</li>
-                        </ul>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🛠 Tech Stack</h4>
-                        <div class="tech-stack">
-                            <span class="tech-item">Flutter</span>
-                            <span class="tech-item">Dart</span>
-                            <span class="tech-item">BLoC State Management</span>
-                            <span class="tech-item">Clean Architecture</span>
-                            <span class="tech-item">REST API & Lex.uz Parsing</span>
-                            <span class="tech-item">Hive (NoSQL Database)</span>
-                            <span class="tech-item">Secure Storage</span>
-                        </div>
-                    </div>
-                    <div class="detail-section">
-                        <h4>🔗 Store Links</h4>
-                        <div class="store-buttons">
-                            <a href="https://apps.apple.com/ru/app/yuristai-app/id6780047253" target="_blank" class="btn-appstore">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.56C4.26,17.1 2.97,12.56 4.72,9.53C5.59,8.03 7.14,7.08 8.82,7.05C10.1,7.03 11.3,7.9 12.08,7.9C12.86,7.9 14.3,6.85 15.84,7C16.5,7.03 18.33,7.27 19.53,9C19.43,9.07 17.2,10.36 17.22,13C17.25,16.08 19.92,17.1 20,17.14C19.97,17.24 19.56,18.64 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C15.85,1.04 14.51,1.73 13.73,2.64C13.07,3.41 12.49,4.52 12.64,5.78C13.87,5.87 15.12,5.17 15.97,4.17Z"/>
-                                </svg>
-                                Download on the App Store
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.yurist.ai" target="_blank" class="btn-playstore">
-                                <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
-                                    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
-                                </svg>
-                                Get it on Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
-<script>
-        const projectData = {
-    styleup: {
-        images: [],
-        currentIndex: 0
-    },
-    nasiya: {
-        images: [],
-        currentIndex: 0
-    },
-    avtotest: {
-        images: [],
-        currentIndex: 0
-    },
-    mymock: {
-        images: [],
-        currentIndex: 0
-    },
-    sair: {
-        images: [],
-        currentIndex: 0
-    },
-    zonic: {
-        images: [],
-        currentIndex: 0
-    },
-    yuristai: {
-        images: [],
-        currentIndex: 0
-    }
-};
-
-        function openModal(project) {
-            createThumbnails(project);
-            document.getElementById(`${project}-modal`).classList.add('active');
-            document.body.style.overflow = 'hidden';
-            updateGallery(project);
-        }
-
-        function closeModal(project) {
-            document.getElementById(`${project}-modal`).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function changeImage(project, direction) {
-            const data = projectData[project];
-            data.currentIndex += direction;
-            if (data.currentIndex < 0) data.currentIndex = data.images.length - 1;
-            if (data.currentIndex >= data.images.length) data.currentIndex = 0;
-            updateGallery(project);
-        }
-
-        function goToImage(project, index) {
-            projectData[project].currentIndex = index;
-            updateGallery(project);
-        }
-
-        function updateGallery(project) {
-            const data = projectData[project];
-            document.getElementById(`${project}-main-img`).src = data.images[data.currentIndex];
-            document.getElementById(`${project}-counter`).textContent = data.currentIndex + 1;
-            
-            // Update thumbnails
-            const thumbs = document.querySelectorAll(`#${project}-thumbs .gallery-thumb`);
-            thumbs.forEach((thumb, index) => {
-                thumb.classList.toggle('active', index === data.currentIndex);
-            });
-        }
-
-        function createThumbnails(project) {
-            const data = projectData[project];
-            const container = document.getElementById(`${project}-thumbs`);
-            container.innerHTML = '';
-            
-            data.images.forEach((src, index) => {
-                const thumb = document.createElement('div');
-                thumb.className = `gallery-thumb ${index === 0 ? 'active' : ''}`;
-                thumb.onclick = () => goToImage(project, index);
-                thumb.innerHTML = `<img src="${src}" alt="Screenshot ${index + 1}">`;
-                container.appendChild(thumb);
-            });
-            
-            document.getElementById(`${project}-total`).textContent = data.images.length;
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const modals = ['styleup', 'nasiya', 'avtotest', 'mymock', 'sair', 'zonic', 'yuristai'];
-            modals.forEach(project => {
-                const modal = document.getElementById(`${project}-modal`);
-                if (modal.classList.contains('active')) {
-                    if (e.key === 'ArrowLeft') changeImage(project, -1);
-                    if (e.key === 'ArrowRight') changeImage(project, 1);
-                    if (e.key === 'Escape') closeModal(project);
-                }
-            });
-        });
-
-        // Close modal on background click
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    const project = this.id.replace('-modal', '');
-                    closeModal(project);
-                }
-            });
-        });
-
-        // Initialize with actual images
-        window.addEventListener('DOMContentLoaded', function() {
-            // Initialize images
-            projectData.styleup.images = [
-                "images/StyleUp1.png",
-                "images/StyleUp2.png",
-                "images/StyleUp3.png"
-            ];
-            
-            projectData.nasiya.images = [
-                "images/nasiyaapp1.png",
-                "images/nasiyaapp2.png",
-                "images/nasiyaapp3.png"
-            ];
-            
-            projectData.avtotest.images = [
-                "images/avtotest1.png",
-                "images/avtotest2.png",
-                "images/avtotest3.png"
-            ];
-
-            projectData.mymock.images = [
-                "images/myMock/Screenshot_20260530_111151.png",
-                "images/myMock/Screenshot_20260530_111159.png",
-                "images/myMock/Screenshot_20260530_111239.png",
-                "images/myMock/Screenshot_20260530_111304.png",
-                "images/myMock/Screenshot_20260530_111312.png"
-            ];
-
-            projectData.sair.images = [
-                "images/SAIR/Screenshot 2026-05-30 at 11.21.41.png",
-                "images/SAIR/Screenshot 2026-05-30 at 11.21.49.png",
-                "images/SAIR/Screenshot 2026-05-30 at 11.21.59.png",
-                "images/SAIR/Screenshot 2026-05-30 at 11.22.14.png",
-                "images/SAIR/Screenshot 2026-05-30 at 11.22.21.png"
-            ];
-
-            projectData.zonic.images = [
-                "images/zonic/Screenshot_20260530_105708.png",
-                "images/zonic/Screenshot_20260530_105721.png",
-                "images/zonic/Screenshot_20260530_105815.png",
-                "images/zonic/Screenshot_20260530_105823.png"
-            ];
-
-            projectData.yuristai.images = [
-                "images/yuristai/yuristai-1.png",
-                "images/yuristai/yuristai-2.png",
-                "images/yuristai/yuristai-3.png",
-                "images/yuristai/yuristai-4.png",
-                "images/yuristai/yuristai-5.png"
-            ];
-        })
-        
-</script>
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
 </body>
 </html>
