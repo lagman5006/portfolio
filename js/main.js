@@ -7,7 +7,7 @@
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 
-  const TYPE_LABELS = { mobile: "Mobile", web: "Web", backend: "Backend" };
+  const TYPE_LABELS = { mobile: "Mobile", desktop: "Desktop", web: "Web", backend: "Backend" };
   const LINK_META = {
     live: { label: "Live site", icon: "↗" },
     appStore: { label: "App Store", icon: "" },
@@ -19,9 +19,14 @@
   const esc = (s) =>
     String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
+  // Freelance + kompaniya loyihalari — qidiruv, modal va hisoblagichlar uchun
+  const companyProjects = data.companyProjects || [];
+  const allProjects = [...data.projects, ...companyProjects];
+  const isCompany = (p) => companyProjects.includes(p);
+
   // ---------- Counters derived from data ----------
-  const shipped = data.projects.length;
-  const inStores = data.projects.filter((p) => p.links.appStore || p.links.playStore).length;
+  const shipped = allProjects.length;
+  const inStores = allProjects.filter((p) => p.links.appStore || p.links.playStore).length;
   $$("[data-count-shipped]").forEach((el) => (el.textContent = shipped));
   $$("[data-count-stores]").forEach((el) => (el.textContent = inStores));
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
@@ -71,7 +76,7 @@
 
   // ---------- Marquee ----------
   (function marquee() {
-    const tools = [...new Set([...data.services.flatMap((s) => s.tools), ...data.projects.flatMap((p) => p.stack)])].slice(0, 22);
+    const tools = [...new Set([...data.services.flatMap((s) => s.tools), ...allProjects.flatMap((p) => p.stack)])].slice(0, 22);
     const row = tools.map((t) => `<span>${esc(t)}</span><i>✦</i>`).join("");
     $("[data-marquee]").innerHTML = row + row;
   })();
@@ -80,7 +85,10 @@
   const grid = $("[data-projects]");
 
   function cardMedia(p) {
-    if (p.frame === "code" || !p.images.length) {
+    if (p.frame !== "code" && !p.images.length) {
+      return `<div class="media-soon"><span class="media-soon-mark">${esc(p.title.charAt(0))}</span><span class="mono muted">Screenshots coming soon</span></div>`;
+    }
+    if (p.frame === "code") {
       const eps = (p.endpoints || ["GET /health", "POST /auth/login", "GET /api/v1/…"]).slice(0, 4);
       return `<div class="media-code">
         <div class="media-code-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="mono muted">api.${esc(p.id)}</span></div>
@@ -104,14 +112,14 @@
     </div>`;
   }
 
-  function renderProjects(filter = "all") {
-    const list = data.projects.filter((p) => filter === "all" || p.type === filter);
-    grid.innerHTML = list
+  function projectCards(list, wideFirst) {
+    return list
       .map((p, i) => {
         const badges = [];
+        if (isCompany(p)) badges.push(`<span class="badge badge-company">${esc(data.company.name)}</span>`);
         if (p.links.appStore || p.links.playStore) badges.push(`<span class="badge badge-live">Live in stores</span>`);
         else if (p.links.live) badges.push(`<span class="badge badge-live">Live</span>`);
-        return `<article class="card ${i === 0 && filter === "all" ? "card--wide" : ""}" style="view-transition-name: card-${esc(p.id)}" data-type="${esc(p.type)}">
+        return `<article class="card ${i === 0 && wideFirst ? "card--wide" : ""}" style="view-transition-name: card-${esc(p.id)}" data-type="${esc(p.type)}">
           <a href="#project/${esc(p.id)}" class="card-link" aria-label="Open ${esc(p.title)} details"></a>
           <div class="card-media">${cardMedia(p)}</div>
           <div class="card-body">
@@ -124,8 +132,28 @@
         </article>`;
       })
       .join("");
+  }
+
+  function renderProjects(filter = "all") {
+    const list = data.projects.filter((p) => filter === "all" || p.type === filter);
+    grid.innerHTML = projectCards(list, filter === "all");
     bindSpotlight(grid);
     $$(".card", grid).forEach((c) => revealObserver.observe(c));
+  }
+
+  function renderCompany() {
+    const section = $("#company");
+    if (!companyProjects.length || !data.company) return section.remove();
+    const c = data.company;
+    $("[data-company]").innerHTML = `<a class="company-strip reveal" href="${esc(c.url)}" target="_blank" rel="noopener">
+        <span class="company-name">${esc(c.name)}</span>
+        <span class="muted">${esc(c.role)} · ${esc(c.since)} — Now</span>
+        <span class="mono muted">${esc(new URL(c.url).host)} ↗</span>
+      </a>`;
+    const cgrid = $("[data-company-projects]");
+    cgrid.innerHTML = projectCards(companyProjects, false);
+    bindSpotlight(cgrid);
+    $$(".card", cgrid).forEach((el) => revealObserver.observe(el));
   }
 
   // Filter chips — only categories that have projects
@@ -312,10 +340,10 @@
   let current = null;
 
   function openProject(id) {
-    const p = data.projects.find((x) => x.id === id);
+    const p = allProjects.find((x) => x.id === id);
     if (!p) return;
     current = p;
-    $("[data-pd-meta]").innerHTML = `<span class="badge">${TYPE_LABELS[p.type] || p.type}</span><span class="mono muted">${p.year}</span>`;
+    $("[data-pd-meta]").innerHTML = `<span class="badge">${TYPE_LABELS[p.type] || p.type}</span>${isCompany(p) ? `<span class="badge badge-company">${esc(data.company.name)}</span>` : ""}<span class="mono muted">${p.year}</span>`;
     $("[data-pd-title]").textContent = p.title;
     $("[data-pd-tagline]").textContent = p.tagline;
     $("[data-pd-desc]").textContent = p.description;
@@ -363,7 +391,7 @@
   dlg.addEventListener("close", () => {
     if (dlg.open) return; // reopened with another project before this event fired
     document.documentElement.classList.remove("no-scroll");
-    if (current && location.hash === `#project/${current.id}`) history.replaceState(null, "", "#work");
+    if (current && location.hash === `#project/${current.id}`) history.replaceState(null, "", isCompany(current) ? "#company" : "#work");
     current = null;
   });
   dlg.addEventListener("click", (e) => {
@@ -414,12 +442,13 @@
   };
 
   const commands = [
-    ...data.projects.map((p) => ({ group: "Projects", label: p.title, hint: TYPE_LABELS[p.type], run: () => {
+    ...allProjects.map((p) => ({ group: "Projects", label: p.title, hint: isCompany(p) ? data.company.name : TYPE_LABELS[p.type], run: () => {
       history.replaceState(null, "", `#project/${p.id}`);
       openProject(p.id);
     } })),
     { group: "Navigate", label: "Home", run: () => scrollToId("home") },
     { group: "Navigate", label: "Work", run: () => scrollToId("work") },
+    ...(companyProjects.length ? [{ group: "Navigate", label: data.company.name, run: () => scrollToId("company") }] : []),
     { group: "Navigate", label: "Services", run: () => scrollToId("services") },
     { group: "Navigate", label: "Journey", run: () => scrollToId("journey") },
     { group: "Navigate", label: "Contact", run: () => scrollToId("contact") },
@@ -502,5 +531,8 @@
 
   // ---------- Init ----------
   renderProjects();
+  renderCompany();
   handleHash();
+  // Kartalar JS bilan chizilgach bo'lim pastga suriladi — #company kabi havolaga qayta o'tamiz
+  if (/^#[\w-]+$/.test(location.hash)) document.getElementById(location.hash.slice(1))?.scrollIntoView();
 })();

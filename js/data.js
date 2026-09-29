@@ -91,37 +91,6 @@ window.PORTFOLIO = {
       },
     },
     {
-      id: "mymock",
-      title: "myMock",
-      tagline: "Interactive educational platform",
-      type: "mobile",
-      frame: "phone",
-      year: 2026,
-      summary:
-        "Mock tests, video lessons and structured courses with progress tracking for students preparing for exams.",
-      description:
-        "myMock is an interactive educational platform that helps students prepare for exams through comprehensive online mock tests, interactive video lessons and structured multi-module courses — with live academic support from teachers.",
-      features: [
-        "Comprehensive mock tests with results tracking",
-        "Interactive video lessons in a modular structure",
-        "Teacher profiles and academic course catalogue",
-        "Secure sign-in with phone number or Google account",
-        "Live chat with teachers and administrators",
-      ],
-      stack: ["Flutter", "Dart", "Provider", "REST API", "Dio", "Firebase Auth"],
-      images: [
-        "images/opt/myMock/Screenshot_20260530_111151.webp",
-        "images/opt/myMock/Screenshot_20260530_111159.webp",
-        "images/opt/myMock/Screenshot_20260530_111239.webp",
-        "images/opt/myMock/Screenshot_20260530_111304.webp",
-        "images/opt/myMock/Screenshot_20260530_111312.webp",
-      ],
-      links: {
-        appStore: "https://apps.apple.com/us/app/mymock/id6760037918",
-        playStore: "https://play.google.com/store/apps/details?id=uz.mymock.app",
-      },
-    },
-    {
       id: "zonic",
       title: "Zonic",
       tagline: "Health & fitness companion",
@@ -182,54 +151,10 @@ window.PORTFOLIO = {
       },
     },
     {
-      id: "styleup",
-      title: "StyleUp",
-      tagline: "Barbershop booking platform (BarBros)",
-      type: "mobile",
-      frame: "phone",
-      year: 2025,
-      summary:
-        "Find barbershops, book services and chat with barbers. Team project at the Najot Ta'lim StartUp program.",
-      description:
-        "StyleUp connects users with nearby barbershops and styling services. It helps barbershops manage their barbers and lets barbers showcase their work to attract more clients. Built as a team project in the Najot Ta'lim StartUp program.",
-      features: [
-        "Browse nearby barbershops and services",
-        "Barber profiles and portfolios",
-        "Appointment booking with a preferred barber",
-        "Real-time chat with barbershops",
-        "Order history and dark / light theme",
-      ],
-      stack: ["Flutter", "Dart", "BLoC", "Clean Architecture", "Dependency Injection", "REST API"],
-      images: ["images/opt/StyleUp1.webp", "images/opt/StyleUp2.webp", "images/opt/StyleUp3.webp"],
-      links: {},
-    },
-    {
-      id: "nasiya",
-      title: "Nasiya App",
-      tagline: "Installment payment management",
-      type: "mobile",
-      frame: "phone",
-      year: 2025,
-      summary:
-        "Debt and installment tracking for small businesses with SMS reminders and financial reports.",
-      description:
-        "Nasiya App is an installment payment management system for small business owners. It tracks customer debts, manages payments and sends automated SMS reminders about upcoming payments.",
-      features: [
-        "Dashboard with total debt overview",
-        "Client management",
-        "Automated SMS payment reminders",
-        "Payment tracking and history",
-        "Multi-language: Uzbek, Russian, English",
-      ],
-      stack: ["Flutter", "Dart", "BLoC", "Clean Architecture", "SMS Integration", "Local Storage"],
-      images: ["images/opt/nasiyaapp1.webp", "images/opt/nasiyaapp2.webp", "images/opt/nasiyaapp3.webp"],
-      links: {},
-    },
-    {
       id: "avtotest",
       title: "Avtomaktab",
       tagline: "Driving school test system",
-      type: "mobile",
+      type: "desktop",
       frame: "screen",
       year: 2025,
       summary:
@@ -267,12 +192,131 @@ window.PORTFOLIO = {
     ------------------------------------------------------------------- */
   ],
 
+  // Ish joyi — kompaniya loyihalari "Work" (freelance) ro'yxatidan alohida ko'rsatiladi
+  company: {
+    name: "IT Progress",
+    url: "https://it-progress.uz/",
+    role: "Flutter Developer",
+    since: "Jul 2026",
+  },
+
+  // Kompaniyada ishlagan loyihalar — maydonlar `projects` bilan bir xil.
+  // Rasmlar hali yo'q: images/opt/<id>/ ga qo'shib, `images` massiviga yozing.
+  companyProjects: [
+    {
+      id: "skor-xodimlar",
+      title: "Skor Xodimlar",
+      tagline: "Staff attendance & field-team tracking",
+      type: "mobile",
+      frame: "phone",
+      year: 2026,
+      summary:
+        "Face-verified check-in, GPS geofencing and a live map of field staff for managers — with payroll and reports built in.",
+      description:
+        "Skor Xodimlar is an employee attendance system for organisations with offices, branches and field teams. Staff check in with a selfie verified by on-device face detection inside an assigned GPS zone, while a background location service keeps the manager's live map up to date. Managers get a separate dashboard with daily and monthly reports, late-arrival and early-leave lists, leave requests and payroll.",
+      features: [
+        "Check-in / check-out with ML Kit face verification",
+        "GPS geofencing — managers assign work zones per employee",
+        "Real-time staff map with movement history on Yandex Maps",
+        "Manager dashboard: daily & monthly reports, latecomers, payroll",
+        "Leave & absence requests with approval flow",
+        "Push notifications and 4 languages (UZ, RU, EN, KG)",
+      ],
+      stack: ["Flutter", "Dart", "BLoC", "Clean Architecture", "ML Kit", "Yandex MapKit", "Geolocator", "Firebase Messaging", "Dio", "GetIt"],
+      images: [],
+      links: {
+        appStore: "https://apps.apple.com/uz/app/skor-xodimlar/id6797519944",
+        playStore: "https://play.google.com/store/apps/details?id=uz.skor.hodimlar",
+      },
+    },
+    {
+      id: "skor-maktab",
+      title: "Skor Maktab",
+      tagline: "School attendance & parent notifications",
+      type: "mobile",
+      frame: "phone",
+      year: 2026,
+      summary:
+        "Face-ID attendance for schools: parents get instant arrival alerts, teachers manage classes, admins see the full picture.",
+      description:
+        "Skor Maktab is a school monitoring and attendance system. Students are registered by face scan at the entrance, and parents instantly receive a push notification when their child arrives or leaves. Teachers manage classes and mark attendance manually when needed, while the school administration sees daily, weekly, monthly and yearly statistics, canteen expenses and AI-generated analysis. Premium features are unlocked with a yearly subscription paid through Click.",
+      features: [
+        "Face-scan attendance with ML Kit face detection",
+        "Instant arrival / departure notifications for parents",
+        "Class and student management, manual attendance for teachers",
+        "Daily, weekly, monthly and yearly attendance statistics",
+        "Canteen expenses and AI-powered attendance analysis",
+        "Yearly subscription via Click payments, Excel export",
+      ],
+      stack: ["Flutter", "Dart", "Riverpod", "Provider", "ML Kit", "Camera", "Firebase Messaging", "Click API", "REST API"],
+      images: [],
+      links: {
+        appStore: "https://apps.apple.com/uz/app/skor-maktab/id6800694358",
+        playStore: "https://play.google.com/store/apps/details?id=uz.skorfaceid.app",
+      },
+    },
+    {
+      id: "toyxona",
+      title: "Toyxona.uz",
+      tagline: "Wedding venue & services marketplace",
+      type: "mobile",
+      frame: "phone",
+      year: 2026,
+      summary:
+        "Find and book wedding halls and event services — with separate panels for venue owners and service providers.",
+      description:
+        "Toyxona.uz is a marketplace for planning weddings and events in Uzbekistan. Clients browse wedding halls, check real-time availability on a calendar, compare packages and send booking requests. Venue owners manage their halls, schedule and incoming requests from their own panel, and service providers (photographers, musicians, decorators and more) showcase their portfolio. Built-in chat, reviews, bonuses, promo codes and referrals keep everyone connected.",
+      features: [
+        "Venue search with availability calendar and day sessions",
+        "Booking requests with confirm / reject flow for owners",
+        "Owner panel: venues, schedule, requests and dashboard",
+        "Provider panel with portfolio for event services",
+        "Chat, reviews, favourites, bonuses, promo codes and referrals",
+        "Sign in with phone OTP, Google or Apple · push notifications",
+      ],
+      stack: ["Flutter", "Dart", "Provider", "REST API", "Firebase Messaging", "Google Sign-In", "Sign in with Apple", "Table Calendar"],
+      images: [],
+      links: {
+        appStore: "https://apps.apple.com/uz/app/toyxonauz/id6796257426",
+        playStore: "https://play.google.com/store/apps/details?id=uz.toyxona.app",
+      },
+    },
+    {
+      id: "osiyo-bozor",
+      title: "Osiyo Bozor",
+      tagline: "Sales & warehouse app for a building-materials market",
+      type: "mobile",
+      frame: "phone",
+      year: 2026,
+      summary:
+        "Point of sale, stock control and tax-receipt QR scanning for building-materials shops — keeps working offline.",
+      description:
+        "Osiyo Bozor is a sales and warehouse management app for building-materials shops (metal, timber, paint) at the Osiyo market. It connects to the OSIYO SYSTEM Tadbirkor API: sellers manage the catalogue, receive stock, make sales and scan fiscal receipt QR codes, which are verified against the tax service (OFD) and synced to the server. A local SQLite database keeps the app usable when the internet drops, and tokens refresh silently in the background.",
+      features: [
+        "Product catalogue with categories, stock-ins and per-product stats",
+        "Cart and point-of-sale checkout, sales history",
+        "Fiscal receipt QR scanning with signed OFD verification",
+        "Warehouse summary and low-stock attention list",
+        "Dashboard and reports; scanner-operator role",
+        "Offline mode on SQLite with automatic token refresh",
+      ],
+      stack: ["Flutter", "Dart", "Riverpod", "GoRouter", "SQLite", "Mobile Scanner", "REST API", "Firebase Messaging"],
+      images: [],
+      links: {},
+    },
+  ],
+
   journey: [
     {
-      when: "Now",
+      when: "Jul 2026 — Now",
+      title: "Flutter Developer · IT Progress",
+      text: "Building and maintaining the company's production apps — attendance systems, a wedding-venue marketplace and a retail/warehouse app.",
+      current: true,
+    },
+    {
+      when: "Freelance",
       title: "Full-Stack Developer",
       text: "Building complete products — mobile and web clients together with the backends and databases behind them.",
-      current: true,
     },
     {
       when: "2025 — 2026",
