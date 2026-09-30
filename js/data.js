@@ -176,7 +176,9 @@ window.PORTFOLIO = {
         "images/opt/xayrulla-tv/tv-2.webp",
         "images/opt/xayrulla-tv/tv-3.webp",
       ],
-      links: {},
+      links: {
+        appStore: "https://apps.apple.com/us/app/futbol-tv/id6813054785",
+      },
     },
     {
       id: "zonic",
