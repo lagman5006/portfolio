@@ -91,8 +91,10 @@
       padding: 44px 48px 36px;
     }
 
-    .head { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
-    .avatar { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; object-position: center 32%; border: 3px solid #fff; box-shadow: 0 0 0 2px var(--accent-soft); }
+    .head { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+    .avatar-wrap { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 7px; width: 130px; flex-shrink: 0; }
+    .avatar { width: 116px; height: 116px; border-radius: 50%; object-fit: cover; object-position: center 32%; border: 3px solid #fff; box-shadow: 0 0 0 2px var(--accent-soft); }
+    .avatar-motto { font-size: 0.72rem; line-height: 1.35; font-style: italic; color: var(--ink-2); font-family: var(--serif); letter-spacing: -0.01em; }
     .name { font-size: 2.35rem; line-height: 1.05; letter-spacing: -0.045em; font-weight: 650; }
     .role { margin-top: 6px; font-size: 1.05rem; color: var(--ink-2); }
     .role em {
@@ -168,7 +170,8 @@
     @media (max-width: 480px) {
       .tb-btn { padding: 0 14px; }
       .head { grid-template-columns: 1fr; gap: 14px; }
-      .avatar { width: 76px; height: 76px; }
+      .avatar-wrap { width: auto; align-items: flex-start; }
+      .avatar { width: 92px; height: 92px; }
       .name { font-size: 1.9rem; }
       .side { grid-template-columns: 1fr; }
       .contacts a, .contacts > span { font-size: 0.76rem; }
@@ -205,7 +208,10 @@
 
   <main class="paper">
     <header class="head">
-      <img class="avatar" src="images/avatar.jpg?v=3" width="92" height="92" alt="Rahmatullo Ergashev">
+      <div class="avatar-wrap">
+        <img class="avatar" src="images/avatar.jpg?v=3" width="116" height="116" alt="Rahmatullo Ergashev">
+        <p class="avatar-motto">“The best fish swim near the bottom”</p>
+      </div>
       <div>
         <h1 class="name">Rahmatullo Ergashev</h1>
         <p class="role"><span data-l="en">Full-Stack Developer</span><span data-l="uz">Full-Stack dasturchi</span><span data-l="ru">Full-Stack разработчик</span> — <em><span data-l="en">mobile, web &amp; backend</span><span data-l="uz">mobil, veb va backend</span><span data-l="ru">мобильная, веб и бэкенд-разработка</span></em></p>
