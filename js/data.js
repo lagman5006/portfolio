@@ -18,7 +18,6 @@ window.PORTFOLIO = {
   profile: {
     name: "Rahmatullo Ergashev",
     role: "Full-Stack Developer",
-    location: "Fergana, Uzbekistan",
     email: "asliddin5006@gmail.com",
     phone: "+998 99 037 5006",
     telegram: "lagman5006",

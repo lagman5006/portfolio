@@ -107,7 +107,6 @@
       `<span class="t-key">const</span> <span class="t-var">developer</span> = {`,
       `  name: ${s(p.name)},`,
       `  role: ${s(p.role)},`,
-      `  location: ${s(p.location)},`,
       `  stack: {`,
       ...Object.entries(p.stack).map(([k, v]) => `    ${k}: ${" ".repeat(Math.max(0, 7 - k.length))}${arr(v)},`),
       `  },`,
