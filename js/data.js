@@ -152,7 +152,7 @@ window.PORTFOLIO = {
       id: "xayrulla-hamidov-tv",
       title: "Xayrulla Hamidov TV",
       tagline: "Football media platform — mobile app, admin panel & API",
-      type: "fullstack",
+      type: "mobile",
       frame: "phone",
       year: 2026,
       summary:
@@ -177,6 +177,7 @@ window.PORTFOLIO = {
       ],
       links: {
         appStore: "https://apps.apple.com/us/app/futbol-tv/id6813054785",
+        playStore: "https://play.google.com/store/apps/details?id=uz.xayrullahamidov.tv&hl=ru",
       },
     },
     {
@@ -387,7 +388,9 @@ window.PORTFOLIO = {
         "images/opt/osiyo-bozor/osiyo-3.webp",
         "images/opt/osiyo-bozor/osiyo-4.webp",
       ],
-      links: {},
+      links: {
+        playStore: "in_progress",
+      },
     },
   ],
 

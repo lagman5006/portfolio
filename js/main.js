@@ -35,8 +35,9 @@
   const isCompany = (p) => companyProjects.includes(p);
 
   // ---------- Counters derived from data ----------
+  const isLiveStore = (url) => Boolean(url && url !== "in_progress");
   const shipped = allProjects.length;
-  const inStores = allProjects.filter((p) => p.links.appStore || p.links.playStore).length;
+  const inStores = allProjects.filter((p) => isLiveStore(p.links.appStore) || isLiveStore(p.links.playStore)).length;
   const setModKeys = () => $$("[data-mod-key]").forEach((el) => (el.textContent = isMac ? "⌘K" : "Ctrl K"));
 
   function setCounters() {
@@ -204,7 +205,8 @@
       .map((p, i) => {
         const badges = [];
         if (isCompany(p)) badges.push(`<span class="badge badge-company">${esc(data.company.name)}</span>`);
-        if (p.links.appStore || p.links.playStore) badges.push(`<span class="badge badge-live">${esc(t("badge.stores"))}</span>`);
+        if (isLiveStore(p.links.appStore) || isLiveStore(p.links.playStore)) badges.push(`<span class="badge badge-live">${esc(t("badge.stores"))}</span>`);
+        else if (p.links.playStore === "in_progress" || p.links.appStore === "in_progress") badges.push(`<span class="badge badge-soon">${esc(t("badge.in_progress"))}</span>`);
         else if (p.links.live) badges.push(`<span class="badge badge-live">${esc(t("badge.live"))}</span>`);
         return `<article class="card ${i === 0 && wideFirst ? "card--wide" : ""}" style="view-transition-name: card-${esc(p.id)}" data-type="${esc(p.type)}">
           <a href="#project/${esc(p.id)}" class="card-link" aria-label="${esc(t("card.open", { title: p.title }))}"></a>
@@ -481,6 +483,10 @@
     const links = Object.entries(p.links).filter(([, url]) => url);
     $("[data-pd-links]").innerHTML = links
       .map(([k, url]) => {
+        if (url === "in_progress") {
+          const storeName = k === "playStore" ? "Google Play" : k === "appStore" ? "App Store" : k;
+          return `<span class="btn btn-small btn-ghost btn-store is-in-progress" style="cursor: default; border-style: dashed;"><span class="link-icon">${LINK_ICONS[k] ?? "▶"}</span>${esc(storeName)} · <span style="color: #f59e0b; font-size: 0.78rem;">${esc(t("link.in_progress"))}</span></span>`;
+        }
         const label = k === "appStore" ? "App Store" : k === "playStore" ? "Google Play" : t(`link.${k}`);
         return `<a class="btn btn-small btn-ghost btn-store" href="${esc(url)}" target="_blank" rel="noopener"><span class="link-icon">${LINK_ICONS[k] ?? "↗"}</span>${esc(label)}</a>`;
       })

@@ -85,6 +85,7 @@ window.I18N = {
       "filter.label": "Filter projects",
       "badge.stores": "Live in stores",
       "badge.live": "Live",
+      "badge.in_progress": "Google Play: in progress",
       "card.view": "View case",
       "card.open": "Open {title} details",
       "card.soon": "Screenshots coming soon",
@@ -94,6 +95,7 @@ window.I18N = {
       "link.shop": "Online shop",
       "link.github": "Source code",
       "link.docs": "API docs",
+      "link.in_progress": "In progress",
 
       "dlg.features": "Key features",
       "dlg.endpoints": "API endpoints",
@@ -187,6 +189,7 @@ window.I18N = {
       "filter.label": "Loyihalarni saralash",
       "badge.stores": "Do'konlarda",
       "badge.live": "Ishlamoqda",
+      "badge.in_progress": "Google Play: jarayonda",
       "card.view": "Batafsil",
       "card.open": "{title} haqida batafsil",
       "card.soon": "Skrinshotlar tez orada",
@@ -196,6 +199,7 @@ window.I18N = {
       "link.shop": "Onlayn do'kon",
       "link.github": "Manba kodi",
       "link.docs": "API hujjatlari",
+      "link.in_progress": "Hali jarayonda",
 
       "dlg.features": "Asosiy imkoniyatlar",
       "dlg.endpoints": "API manzillari",
@@ -289,6 +293,7 @@ window.I18N = {
       "filter.label": "Фильтр проектов",
       "badge.stores": "В сторах",
       "badge.live": "Онлайн",
+      "badge.in_progress": "Google Play: в процессе",
       "card.view": "Подробнее",
       "card.open": "Подробнее о проекте {title}",
       "card.soon": "Скриншоты скоро",
@@ -298,6 +303,7 @@ window.I18N = {
       "link.shop": "Интернет-магазин",
       "link.github": "Исходный код",
       "link.docs": "Документация API",
+      "link.in_progress": "В процессе",
 
       "dlg.features": "Ключевые возможности",
       "dlg.endpoints": "API-эндпоинты",

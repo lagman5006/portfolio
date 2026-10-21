@@ -472,6 +472,8 @@ kbd {
 }
 .badge-live { color: var(--live); border-color: rgb(74 222 128 / 0.3); background: rgb(74 222 128 / 0.08); }
 .badge-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge-soon { color: #f59e0b; border-color: rgb(245 158 11 / 0.3); background: rgb(245 158 11 / 0.08); }
+.badge-soon::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .badge-company { color: var(--accent-2); border-color: rgb(34 211 238 / 0.3); background: rgb(34 211 238 / 0.08); }
 
 /* IT Progress — kompaniya bo'limi */
@@ -736,6 +738,14 @@ dialog { color: var(--text); }
   border-color: #8b5cf6;
   color: #fff;
   box-shadow: 0 10px 25px -8px rgb(139 92 246 / 0.7);
+}
+.btn-store.is-in-progress,
+.btn-store.is-in-progress:hover {
+  background: var(--surface);
+  border-color: var(--border-2);
+  color: var(--muted);
+  box-shadow: none;
+  transform: none;
 }
 .pd-desc { color: #b6bac8; }
 .pd-h { font-family: var(--mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 14px; }
